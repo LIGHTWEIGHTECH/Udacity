@@ -1,0 +1,56 @@
+@media screen and (max-width: 499px) {
+  .projects {
+    width: 50%;
+  }
+
+  .himg {
+    max-height: 150px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .projects {
+    width: 33.33333%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 799px) {
+  .himg {
+    max-height: 200px;
+  }
+  h1 {
+    letter-spacing: 3px;
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+  h1 {
+    letter-spacing: 4px;
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.6em;
+  }
+
+  h4 {
+    font-size: 1.3em;
+  }
+
+  .projects a {
+    font-size: 0.7em;
+  }
+
+  .himg {
+    max-height: 250px;
+  }
+}
