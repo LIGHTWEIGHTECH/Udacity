@@ -36,15 +36,22 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
 const allCards = document.getElementsByClassName('card');
 let openCards = [];
 let i = 0;
 
 document.addEventListener('click', function(event) {
+  if (i < 2) {
   openCards.push(event.target);
   openCards[i].classList.add('show', 'open');
   i++;
-
   console.log(openCards);
-});
+} else {
+  setTimeout(function hideCards() {
+    openCards[0].classList.remove('show', 'open');
+    openCards[1].classList.remove('show', 'open');
+    openCards.pop();
+    openCards.pop();
+    i = 0;
+  }, 500);
+}});
