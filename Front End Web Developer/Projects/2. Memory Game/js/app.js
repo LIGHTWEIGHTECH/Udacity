@@ -32,6 +32,7 @@ function shuffle(array) {
 document.addEventListener('click', function() {
   if (openCards.length < 2) {
     showCards(openCards);
+    movesTaken();
   } else {
     sameCards(openCards);
   }})
@@ -56,18 +57,24 @@ document.addEventListener('click', function() {
 
     /*  - if the list already has another card, check to see if the two cards match */
     function sameCards(x) {
+
       let firstCard = x[0].innerHTML;
       let secondCard = x[1].innerHTML;
       if (firstCard === secondCard) {
-        x[0].classList.add('match');
-        x[1].classList.add('match');
+        lockCards(x);
       } else {
         setTimeout(function() {
           hideCards(x);
-        }, 800);
+        }, 600);
       }}
 
       /*    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one) */
+      function lockCards(x) {
+        x[0].classList.add('match');
+        x[1].classList.add('match');
+        x.splice(0, 1);
+        i = 0;
+      }
 
 
       /*    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one) */
@@ -79,6 +86,9 @@ document.addEventListener('click', function() {
         }}
 
         /*    + increment the move counter and display it on the page (put this functionality in another function that you call from this one) */
-
+function movesTaken() {
+  const moveCounter = document.querySelector('moves');
+  console.log(moveCounter);
+}
 
         /*    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one) */
