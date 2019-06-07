@@ -1,11 +1,26 @@
 let openCards = [];
+let newCards = [];
 let i = 0;
 let z = 0;
+let v = 0;
+
 
 /* Create a list that holds all of your cards */
-let allCards = document.getElementsByClassName('card');
+const cardData = [
+  'fa-diamond',
+  'fa-paper-plane-o',
+  'fa-anchor',
+  'fa fa-bolt',
+  'fa-cube',
+  'fa-leaf',
+  'fa-bicycle',
+  'fa-bomb'
+];
 
 /* Display the cards on the page */
+const list = document.createElement('li');
+
+
 /*   - shuffle the list of cards using the provided "shuffle" method below */
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -74,7 +89,6 @@ function lockCards(x) {
     x[1].classList.add('match');
     x.splice(0, 2);
     i = 0;
-    return
 }
 
 /*    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one) */
@@ -91,7 +105,6 @@ function movesTaken() {
     const moveCounter = document.querySelector('span');
     ++z;
     moveCounter.innerText = z;
-    console.log(moveCounter);
 }
 
 /*    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one) */
