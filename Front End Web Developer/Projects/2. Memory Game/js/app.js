@@ -133,6 +133,7 @@ function lockCards(x) {
     cardsMatched += 2;
     x.splice(0, 2);
     i = 0;
+    starRating();
 }
 
 /*    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one) */
@@ -149,36 +150,38 @@ const moveCounter = document.querySelector('span');
 
 function movesTaken(value) {
     if (value != 1) {
-        ++z;
-        moveCounter.innerText = z;
+        z += 1;
     } else {
-        moveCounter.innerText = "0";
+        z = 0;
     }
+    moveCounter.innerText = z;
 }
 
 /*    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one) */
 
 
 // Restart System
-function restarting() {
-    const restartButton = document.getElementById('restartButton');
-    restartButton.addEventListener('click', function() {
-        // Restart the Game
-        const deckContainer = document.getElementById('deck');
-        document.body.removeChild(deckContainer);
-        movesTaken(1);
-        cardsMatched = 0;
-        shuffle(cardDatas);
-        createCardDeck();
-    });
-}
+const restartButton = document.getElementById('restartButton');
+restartButton.addEventListener('click', function restarting() {
+    // Restart the Game
+    const deckContainer = document.getElementById('deck');
+    document.body.removeChild(deckContainer);
+    movesTaken(1);
+    cardsMatched = 0;
+    shuffle(cardDatas);
+    createCardDeck();
+    removeStars();
+});
 
 // Score System
 function starRating() {
-    if (movesCounter.textContent <= 10 && cardsMatched >= 8) {
+    if (z <= 12 && cardsMatched >= 4) {
         addStar();
     }
-    if (movesCounter.textContent <= 20 && cardsMatched >= 16) {
+    if (z <= 16 && cardsMatched >= 8) {
+        addStar();
+    }
+    if (z <= 24 && cardsMatched >= 16) {
         addStar();
     }
 }
@@ -189,7 +192,13 @@ function addStar() {
     let starLi = document.createElement('li');
     let starI = document.createElement('i');
     starI.setAttribute('class', 'fa fa-star');
+    starI.setAttribute('id', 'star');
     starLi.appendChild(starI);
     fragment.appendChild(starLi);
     starUl.appendChild(fragment);
+}
+
+function removeStars() {
+    const starContainer = document.getElementById('rating');
+    starContainer.innerHTML = "";
 }
