@@ -7,6 +7,7 @@ let moves = 0;
 let v = 0;
 let sec = 0;
 let min = 0;
+let time = 0;
 
 
 /* Create a list that holds all of your cards */
@@ -180,6 +181,9 @@ restarting();
     shuffle(cardDatas);
     createCardDeck();
     removeStars();
+
+    sec = 0;
+    min = 0;
 }
 
 // Score System
@@ -218,7 +222,7 @@ const dial = document.getElementById('dia');
 dial.showModal();
 
 let fRating = document.querySelector('.finalRating');
-fRating.innerHTML = "You acquired " + starAmount + " star(s) in " + moves + " moves";
+fRating.innerHTML = "You acquired " + starAmount + " star(s) with " + moves + " moves in " + time;
 
 const confirmBtn = document.getElementById('confirmBtn');
 confirmBtn.addEventListener('click', function () {
@@ -232,21 +236,32 @@ cancelBtn.addEventListener('click', function () {
 })
 }
 
-let checkTimer = setInterval(function() {
+setInterval(function() {
+  if (cardsMatched >= 16) {
+    return;
+  } else {
   timer();
-}, 1000)
+}}, 1000)
 
 function timer() {
-  sec++;
   if (sec < 10) {
   document.getElementById("timerSec").innerHTML = "0" + sec;
+  document.getElementById("timerMin").innerHTML = min + ":";
 } else if (sec < 60) {
   document.getElementById("timerSec").innerHTML = sec;
+  document.getElementById("timerMin").innerHTML = min + ":";
 }
   if (sec >= 60) {
     sec = 0;
     document.getElementById("timerSec").innerHTML = "0" + sec;
     min++;
     document.getElementById("timerMin").innerHTML = min + ":";
+  }
+  sec++;
+
+  if (min < 1) {
+    time = sec + " second(s)";
+  } else {
+    time = min + " minute(s) and " + sec + " second(s)";
   }
 }
