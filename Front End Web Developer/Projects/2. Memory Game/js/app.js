@@ -1,8 +1,9 @@
 let openCards = [];
 let newCards = [];
 let cardsMatched = 0;
+let starAmount = 0;
 let i = 0;
-let z = 0;
+let moves = 0;
 let v = 0;
 
 
@@ -134,6 +135,10 @@ function lockCards(x) {
     x.splice(0, 2);
     i = 0;
     starRating();
+    moveCounter.innerText = moves;
+    if (cardsMatched >= 16) {
+      complete();
+}
 }
 
 /*    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one) */
@@ -150,11 +155,10 @@ const moveCounter = document.querySelector('span');
 
 function movesTaken(value) {
     if (value != 1) {
-        z += 1;
+        moves += 1;
     } else {
-        z = 0;
+        moves = 0;
     }
-    moveCounter.innerText = z;
 }
 
 /*    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one) */
@@ -162,8 +166,11 @@ function movesTaken(value) {
 
 // Restart System
 const restartButton = document.getElementById('restartButton');
-restartButton.addEventListener('click', function restarting() {
+restartButton.addEventListener('click', function () {
+restarting();
+})
     // Restart the Game
+    function restarting() {
     const deckContainer = document.getElementById('deck');
     document.body.removeChild(deckContainer);
     movesTaken(1);
@@ -171,17 +178,17 @@ restartButton.addEventListener('click', function restarting() {
     shuffle(cardDatas);
     createCardDeck();
     removeStars();
-});
+}
 
 // Score System
 function starRating() {
-    if (z <= 12 && cardsMatched >= 4) {
+    if (moves <= 12 && cardsMatched >= 4) {
         addStar();
     }
-    if (z <= 16 && cardsMatched >= 8) {
+    if (moves <= 16 && cardsMatched >= 8) {
         addStar();
     }
-    if (z <= 24 && cardsMatched >= 16) {
+    if (moves <= 24 && cardsMatched >= 16) {
         addStar();
     }
 }
@@ -196,9 +203,29 @@ function addStar() {
     starLi.appendChild(starI);
     fragment.appendChild(starLi);
     starUl.appendChild(fragment);
+    starAmount++;
 }
 
 function removeStars() {
     const starContainer = document.getElementById('rating');
     starContainer.innerHTML = "";
+}
+
+function complete() {
+const dial = document.getElementById('dia');
+dial.showModal();
+
+let fRating = document.querySelector('.finalRating');
+fRating.innerHTML = "You acquired " + starAmount + " star(s) in " + moves + " moves";
+
+const confirmBtn = document.getElementById('confirmBtn');
+confirmBtn.addEventListener('click', function () {
+  dial.close();
+  restarting();
+})
+
+const cancelBtn = document.getElementById('cancelBtn');
+cancelBtn.addEventListener('click', function () {
+  dial.close();
+})
 }
