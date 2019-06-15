@@ -182,7 +182,7 @@ function restarting() {
     shuffle(cardDatas);
     createCardDeck();
     removeStars();
-
+    openCards = [];
     sec = 0;
     min = 0;
 }
