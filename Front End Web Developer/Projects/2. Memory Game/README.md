@@ -3,18 +3,27 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Project](#project)
+* [Disclaimer](#disclaimer)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+- Open index.html
+- Play the game using your mouse
+- When you match all the 16 cards into 8 pairs, you win
+- You are able to restart the game by clicking on the 'repeat' button or by finishing the game
 
-To get started, open `js/app.js` and start building out the app's functionality
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+## Project
 
-## Contributing
+This is my finalized project 2 for Udacity. In this project I trained using DOM Elements and manipulating HTML code lines using the DOM.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+Enjoy the game!
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Disclaimer
+
+Starter code has been provided by Udacity.
+https://github.com/udacity/fend-project-memory-game
+
+For more information on Plagiarism visit https://udacity.zendesk.com/hc/en-us/articles/360001451091-What-is-plagiarism-
