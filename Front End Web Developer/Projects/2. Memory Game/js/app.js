@@ -162,6 +162,7 @@ function movesTaken(value) {
     } else {
         moves = 0;
     }
+    document.querySelector(".moves").innerHTML = moves;
 }
 
 /*    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one) */
