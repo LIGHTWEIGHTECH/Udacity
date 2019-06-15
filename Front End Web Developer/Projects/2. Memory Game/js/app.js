@@ -140,8 +140,8 @@ function lockCards(x) {
     starRating();
     moveCounter.innerText = moves;
     if (cardsMatched >= 16) {
-      complete();
-}
+        complete();
+    }
 }
 
 /*    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one) */
@@ -170,11 +170,11 @@ function movesTaken(value) {
 
 // Restart System
 const restartButton = document.getElementById('restartButton');
-restartButton.addEventListener('click', function () {
-restarting();
+restartButton.addEventListener('click', function() {
+    restarting();
 })
-    // Restart the Game
-    function restarting() {
+// Restart the Game
+function restarting() {
     const deckContainer = document.getElementById('deck');
     document.body.removeChild(deckContainer);
     movesTaken(1);
@@ -219,50 +219,51 @@ function removeStars() {
 }
 
 function complete() {
-const dial = document.getElementById('dia');
-dial.showModal();
+    const dial = document.getElementById('dia');
+    dial.showModal();
 
-let fRating = document.querySelector('.finalRating');
-fRating.innerHTML = "You acquired " + starAmount + " star(s) with " + moves + " moves in " + time;
+    let fRating = document.querySelector('.finalRating');
+    fRating.innerHTML = "You acquired " + starAmount + " star(s) with " + moves + " moves in " + time;
 
-const confirmBtn = document.getElementById('confirmBtn');
-confirmBtn.addEventListener('click', function () {
-  dial.close();
-  restarting();
-})
+    const confirmBtn = document.getElementById('confirmBtn');
+    confirmBtn.addEventListener('click', function() {
+        dial.close();
+        restarting();
+    })
 
-const cancelBtn = document.getElementById('cancelBtn');
-cancelBtn.addEventListener('click', function () {
-  dial.close();
-})
+    const cancelBtn = document.getElementById('cancelBtn');
+    cancelBtn.addEventListener('click', function() {
+        dial.close();
+    })
 }
 
 setInterval(function() {
-  if (cardsMatched >= 16) {
-    return;
-  } else {
-  timer();
-}}, 1000)
+    if (cardsMatched >= 16) {
+        return;
+    } else {
+        timer();
+    }
+}, 1000)
 
 function timer() {
-  if (sec < 10) {
-  document.getElementById("timerSec").innerHTML = "0" + sec;
-  document.getElementById("timerMin").innerHTML = min + ":";
-} else if (sec < 60) {
-  document.getElementById("timerSec").innerHTML = sec;
-  document.getElementById("timerMin").innerHTML = min + ":";
-}
-  if (sec >= 60) {
-    sec = 0;
-    document.getElementById("timerSec").innerHTML = "0" + sec;
-    min++;
-    document.getElementById("timerMin").innerHTML = min + ":";
-  }
-  sec++;
+    if (sec < 10) {
+        document.getElementById("timerSec").innerHTML = "0" + sec;
+        document.getElementById("timerMin").innerHTML = min + ":";
+    } else if (sec < 60) {
+        document.getElementById("timerSec").innerHTML = sec;
+        document.getElementById("timerMin").innerHTML = min + ":";
+    }
+    if (sec >= 60) {
+        sec = 0;
+        document.getElementById("timerSec").innerHTML = "0" + sec;
+        min++;
+        document.getElementById("timerMin").innerHTML = min + ":";
+    }
+    sec++;
 
-  if (min < 1) {
-    time = sec + " second(s)";
-  } else {
-    time = min + " minute(s) and " + sec + " second(s)";
-  }
+    if (min < 1) {
+        time = sec + " second(s)";
+    } else {
+        time = min + " minute(s) and " + sec + " second(s)";
+    }
 }
