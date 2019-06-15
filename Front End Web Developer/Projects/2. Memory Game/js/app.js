@@ -5,6 +5,8 @@ let starAmount = 0;
 let i = 0;
 let moves = 0;
 let v = 0;
+let sec = 0;
+let min = 0;
 
 
 /* Create a list that holds all of your cards */
@@ -228,4 +230,23 @@ const cancelBtn = document.getElementById('cancelBtn');
 cancelBtn.addEventListener('click', function () {
   dial.close();
 })
+}
+
+let checkTimer = setInterval(function() {
+  timer();
+}, 1000)
+
+function timer() {
+  sec++;
+  if (sec < 10) {
+  document.getElementById("timerSec").innerHTML = "0" + sec;
+} else if (sec < 60) {
+  document.getElementById("timerSec").innerHTML = sec;
+}
+  if (sec >= 60) {
+    sec = 0;
+    document.getElementById("timerSec").innerHTML = "0" + sec;
+    min++;
+    document.getElementById("timerMin").innerHTML = min + ":";
+  }
 }
