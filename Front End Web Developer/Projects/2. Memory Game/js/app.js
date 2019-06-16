@@ -8,6 +8,7 @@ let v = 0;
 let sec = 0;
 let min = 0;
 let time = 0;
+// I have tried to get the variables in a function (as previews reviewer suggested), however I have no idea how.
 
 
 /* Create a list that holds all of your cards */
@@ -21,6 +22,7 @@ const cardDatas = [
     'fa fa-bicycle', 'fa fa-bicycle',
     'fa fa-bomb', 'fa fa-bomb'
 ];
+// I reviewed the spread/rest operater section again in the nanodegree but I don't know how to make it work in this particular project. Small example? :)
 
 /* Display the cards on the page */
 shuffle(cardDatas);
