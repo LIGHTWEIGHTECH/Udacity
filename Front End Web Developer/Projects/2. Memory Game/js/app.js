@@ -182,20 +182,19 @@ function restarting() {
     shuffle(cardDatas);
     createCardDeck();
     removeStars();
+    addStar();
     openCards = [];
     sec = 0;
     min = 0;
 }
 
 // Score System
+addStar();
 function starRating() {
-    if (moves <= 12 && cardsMatched >= 4) {
+    if (moves <= 20 && cardsMatched >= 8) {
         addStar();
     }
-    if (moves <= 16 && cardsMatched >= 8) {
-        addStar();
-    }
-    if (moves <= 24 && cardsMatched >= 16) {
+    if (moves <= 30 && cardsMatched >= 16) {
         addStar();
     }
 }
