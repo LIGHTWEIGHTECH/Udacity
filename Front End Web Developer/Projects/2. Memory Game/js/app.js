@@ -191,7 +191,7 @@ function restarting() {
 // Score System
 addStar();
 function starRating() {
-    if (moves <= 20 && cardsMatched >= 8) {
+    if (moves <= 25 && cardsMatched >= 8) {
         addStar();
     }
     if (moves <= 30 && cardsMatched >= 16) {
