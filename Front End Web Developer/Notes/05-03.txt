@@ -28,10 +28,10 @@ eventually reaching Object() (top-level parent) if necessary.
 
 We also looked at a few methods and properties that allow use to check the origins and references of objects and their prototypes, namely:
 
-hasOwnProperty()
-isPrototypeOf()
-Object.getPrototypeOf()
-.constructor
+* hasOwnProperty()
+* isPrototypeOf()
+* Object.getPrototypeOf()
+* .constructor
 
 
 // Inheritance in JavaScript is all about setting up the prototype chain. 
