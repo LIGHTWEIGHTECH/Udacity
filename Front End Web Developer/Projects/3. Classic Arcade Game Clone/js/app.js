@@ -1,25 +1,22 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+class Enemy {
+    constructor() {
+        this.x = 0;
+        this.y = 0;
+        this.sprite = 'images/enemy-bug.png';
+    }
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
-};
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-};
-
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
+    update(dt) {
+        // You should multiply any movement by the dt parameter
+        // which will ensure the game runs at the same speed for
+        // all computers.
+    }
+    
+    // Draw the enemy on the screen, required method for game
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -44,16 +41,26 @@ class Character {
             this.x -= this.walkX;
         } if (key === 'up' && this.y >= this.walkY) {
             this.y -= this.walkY;
-        } if (key === 'right' && this.x <= (5*this.walkX)) {
+        } if (key === 'right' && this.x <= (3*this.walkX)) {
             this.x += this.walkX;
-        } if (key === 'down' && this.y <= (5*this.walkY)) {
+        } if (key === 'down' && this.y <= (4*this.walkY)) {
             this.y += this.walkY;
         }
     }
 }
 
 // Now instantiate your objects.
+
+const allEnemies = [];
 // Place all enemy objects in an array called allEnemies
+function createEnemy(num) {
+    for (let made = 0; made < num; made++) {
+        allEnemies.push(new Enemy);
+    }
+    console.log(allEnemies);
+}
+
+
 // Place the player object in a variable called player
 const player = new Character();
 
