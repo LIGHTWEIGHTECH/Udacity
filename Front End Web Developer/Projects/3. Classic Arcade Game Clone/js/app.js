@@ -13,6 +13,7 @@ class Enemy {
         // which will ensure the game runs at the same speed for
         // all computers.
         this.x += 101 * dt;
+        // math.floor(math.random) for random movement speed.
     }
     
     // Draw the enemy on the screen, required method for game
@@ -59,7 +60,9 @@ const createEnemy = function() {
         allEnemies.push(new Enemy);
         console.log(allEnemies);
     };
+createEnemy();
 setInterval(createEnemy, 2000);
+// bug: too many enemy's on one line!
 
 
 
