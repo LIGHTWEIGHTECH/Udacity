@@ -26,10 +26,10 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 class Character {
     constructor() {
-        this.walkX = 83;
-        this.walkY = 101;
-        this.x = this.walkX * 2
-        this.y = this.walkY * 4
+        this.walkX = 101;
+        this.walkY = 83;
+        this.x = this.walkX * 2;
+        this.y = this.walkY * 5 - 10;
         this.sprite = 'images/char-boy.png';
     }
     // Methods
@@ -41,13 +41,13 @@ class Character {
     }
     handleInput(key) {
         if (key === 'left' && this.x >= this.walkX) {
-            this.x -= 83;
+            this.x -= this.walkX;
         } if (key === 'up' && this.y >= this.walkY) {
-            this.y -= 101;
+            this.y -= this.walkY;
         } if (key === 'right' && this.x <= (5*this.walkX)) {
-            this.x += 83;
+            this.x += this.walkX;
         } if (key === 'down' && this.y <= (5*this.walkY)) {
-            this.y += 101;
+            this.y += this.walkY;
         }
     }
 }
