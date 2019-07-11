@@ -55,12 +55,12 @@ class Character {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
-function createEnemy(num = 1) {
-    for (let made = 0; made < num; made++) {
+const createEnemy = function() {
         allEnemies.push(new Enemy);
-    }
-    console.log(allEnemies);
-}
+        console.log(allEnemies);
+    };
+setInterval(createEnemy, 2000);
+
 
 
 // Place the player object in a variable called player
