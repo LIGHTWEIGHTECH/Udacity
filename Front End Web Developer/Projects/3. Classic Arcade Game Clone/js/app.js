@@ -26,8 +26,10 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 class Character {
     constructor() {
-        this.x = 202;
-        this.y = 415 - 20;
+        this.walkX = 83;
+        this.walkY = 101;
+        this.x = this.walkX * 2
+        this.y = this.walkY * 4
         this.sprite = 'images/char-boy.png';
     }
     // Methods
@@ -38,13 +40,13 @@ class Character {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     handleInput(key) {
-        if (key === 'left') {
+        if (key === 'left' && this.x >= this.walkX) {
             this.x -= 83;
-        } else if (key === 'up') {
+        } if (key === 'up' && this.y >= this.walkY) {
             this.y -= 101;
-        } else if (key === 'right') {
+        } if (key === 'right' && this.x <= (5*this.walkX)) {
             this.x += 83;
-        } else if (key === 'down') {
+        } if (key === 'down' && this.y <= (5*this.walkY)) {
             this.y += 101;
         }
     }
