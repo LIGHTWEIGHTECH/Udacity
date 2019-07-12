@@ -14,8 +14,8 @@ class Enemy {
         // which will ensure the game runs at the same speed for
         // all computers.
         this.x += this.speed * dt;
+        }
         // math.floor(math.random) for random movement speed.
-    }
     
     // Draw the enemy on the screen, required method for game
     render() {
@@ -68,11 +68,18 @@ const createEnemy = function() {
     } else {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
-        console.log(createdEnemy);
+        console.log(allEnemies);
     }}
     // Spawn an enemy every 2 seconds.
 setInterval(createEnemy, 2000);
 
+const deleteEnemy = function() {
+    if (allEnemies.length >= 1) {
+        if (allEnemies[0].x >= 505) {
+            allEnemies.splice(0, 1);
+    }}}
+
+setInterval(deleteEnemy, 500);
 
 
 // Place the player object in a variable called player
