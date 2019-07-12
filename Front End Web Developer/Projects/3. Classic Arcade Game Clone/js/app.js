@@ -6,13 +6,14 @@ class Enemy {
         this.randomStartY = this.walkY * Math.floor(Math.random() * 3) + 83;
         this.y = this.randomStartY - 20;
         this.sprite = 'images/enemy-bug.png';
+        this.speed = Math.floor(Math.random() * (150 - 100) ) + 100;
     }
 
     update(dt) {
         // You should multiply any movement by the dt parameter
         // which will ensure the game runs at the same speed for
         // all computers.
-        this.x += 101 * dt;
+        this.x += this.speed * dt;
         // math.floor(math.random) for random movement speed.
     }
     
@@ -21,6 +22,7 @@ class Enemy {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 }
+
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -56,13 +58,20 @@ class Character {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
+let lastEnemy = {};
 const createEnemy = function() {
-        allEnemies.push(new Enemy);
-        console.log(allEnemies);
-    };
-createEnemy();
+    let createdEnemy = new Enemy;
+    // Checks if the newly created Object (createdEnemy), does not have
+    // the same spawn location OR speed. If so, overwrite with a new one.
+    if (createdEnemy.speed === lastEnemy.speed || createdEnemy.randomStartY === lastEnemy.randomStartY) {
+        createEnemy();
+    } else {
+        allEnemies.push(createdEnemy);
+        lastEnemy = createdEnemy;
+        console.log(createdEnemy);
+    }}
+    // Spawn an enemy every 2 seconds.
 setInterval(createEnemy, 2000);
-// bug: too many enemy's on one line!
 
 
 
