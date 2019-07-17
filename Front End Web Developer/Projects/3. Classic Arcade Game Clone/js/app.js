@@ -1,9 +1,12 @@
 // Enemies our player must avoid
 class Enemy {
     constructor() {
+        // Enemy's spawn location off-screen.
         this.x = -101;
         this.walkY = 83;
+        // Making sure enemy's spawn in one of the 3 lanes.
         this.randomStartY = this.walkY * Math.floor(Math.random() * 3) + 83;
+        // -20 is to make sure the object is centralized.
         this.y = this.randomStartY - 20;
         this.sprite = 'images/enemy-bug.png';
         this.speed = Math.floor(Math.random() * (150 - 100) ) + 100;
@@ -15,7 +18,6 @@ class Enemy {
         // all computers.
         this.x += this.speed * dt;
         }
-        // math.floor(math.random) for random movement speed.
     
     // Draw the enemy on the screen, required method for game
     render() {
@@ -34,10 +36,30 @@ class Character {
         this.x = this.walkX * 2;
         this.y = this.walkY * 5 - 10;
         this.sprite = 'images/char-boy.png';
+        this.charXY = [0, 0];
     }
     // Methods
     update() {
-
+        if (this.x === 0) {
+            this.charXY.splice(0, 1, 1);
+            console.log(this.charXY);
+        }
+        if (this.x === 101) {
+            this.charXY.splice(0, 1, 2);
+            console.log(this.charXY);
+        }
+        if (this.x === 202) {
+            this.charXY.splice(0, 1, 3);
+            console.log(this.charXY);
+        }
+        if (this.x === 303) {
+            this.charXY.splice(0, 1, 4);
+            console.log(this.charXY);
+        }
+        if (this.x === 404) {
+            this.charXY.splice(0, 1, 5);
+            console.log(this.charXY);
+        }
     }
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -68,7 +90,6 @@ const createEnemy = function() {
     } else {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
-        console.log(allEnemies);
     }}
     // Spawn an enemy every 2 seconds.
 setInterval(createEnemy, 2000);
@@ -84,6 +105,14 @@ setInterval(deleteEnemy, 500);
 
 // Place the player object in a variable called player
 const player = new Character();
+
+function checkCollisions() {
+    for (const bug of allEnemies) {
+        if (Math.floor(bug.x) === Math.floor(player.x)) {
+            console.log('COLLISION');
+        }
+    }
+}
 
 
 
