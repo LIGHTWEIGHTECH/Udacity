@@ -21,19 +21,19 @@ class Enemy {
         this.flatX = Math.floor(this.x);
         this.flatY = Math.floor(this.y);
         switch (this.flatX) {
-            case 0:
+            case :
                 this.enemyXY.splice(0, 1, 1);
                 break;
-            case 101:
+            case 50 || 51 || 52 || 53:
                 this.enemyXY.splice(0, 1, 2);
                 break;
-            case 202:
+            case 150 || 151 || 152 || 153:
                 this.enemyXY.splice(0, 1, 3);
                 break;
-            case 303:
+            case 253 || 254 || 255 || 256:
                 this.enemyXY.splice(0, 1, 4);
                 break;
-            case 404:
+            case 354 || 355 || 356 || 357:
                 this.enemyXY.splice(0, 1, 5);
                 break;
         }
@@ -48,6 +48,8 @@ class Enemy {
                 this.enemyXY.splice(1, 1, 5);
                 break;
         }
+        console.log(test.enemyXY);
+
     }
     
     // Draw the enemy on the screen, required method for game
@@ -128,6 +130,8 @@ class Character {
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 let lastEnemy = {};
+let test = {};
+let u = 0;
 const createEnemy = function() {
     let createdEnemy = new Enemy;
     // Checks if the newly created Object (createdEnemy), does not have
@@ -137,7 +141,10 @@ const createEnemy = function() {
     } else {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
-        console.log(allEnemies[0].y);
+        if (u === 0) {
+            test = lastEnemy;
+            u++;
+        }
     }}
     // Spawn an enemy every 2 seconds.
 setInterval(createEnemy, 2000);
@@ -155,11 +162,13 @@ setInterval(deleteEnemy, 500);
 const player = new Character();
 
 
-// NEED TO FINISH, NEED ENEMY Y POS
+// Tests the location of player vs enemy and if so, reset the player back to start square
+// still buggy
 function checkCollisions() {
     for (let bugs of allEnemies) {
-        if (bugs.enemyXY === player.charXY) {
-            console.log('lol');
+        if (bugs.enemyXY[0] === player.charXY[0] && bugs.enemyXY[1] === player.charXY[1]) {
+            player.x = player.walkX * 2;
+            player.y = player.walkY * 5 - 10;
         }
     }
 }
