@@ -38,19 +38,13 @@ class Enemy {
                 break;
         }
         switch (this.flatY) {
-            case 405:
-                this.enemyXY.splice(1, 1, 1);
-                break;
-            case 322:
-                this.enemyXY.splice(1, 1, 2);
-                break;
-            case 239:
+            case 229:
                 this.enemyXY.splice(1, 1, 3);
                 break;
-            case 156:
+            case 146:
                 this.enemyXY.splice(1, 1, 4);
                 break;
-            case 73:
+            case 63:
                 this.enemyXY.splice(1, 1, 5);
                 break;
         }
@@ -143,6 +137,7 @@ const createEnemy = function() {
     } else {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
+        console.log(allEnemies[0].y);
     }}
     // Spawn an enemy every 2 seconds.
 setInterval(createEnemy, 2000);
@@ -159,9 +154,15 @@ setInterval(deleteEnemy, 500);
 // Place the player object in a variable called player
 const player = new Character();
 
-function checkCollisions() {
-}
 
+// NEED TO FINISH, NEED ENEMY Y POS
+function checkCollisions() {
+    for (let bugs of allEnemies) {
+        if (bugs.enemyXY === player.charXY) {
+            console.log('lol');
+        }
+    }
+}
 
 
 // This listens for key presses and sends the keys to your
