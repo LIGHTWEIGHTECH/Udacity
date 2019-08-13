@@ -10,6 +10,7 @@ class Enemy {
         this.y = this.randomStartY - 20;
         this.sprite = 'images/enemy-bug.png';
         this.speed = Math.floor(Math.random() * (150 - 100) ) + 100;
+        this.enemyXY = [0, 0];
     }
 
     update(dt) {
@@ -17,7 +18,43 @@ class Enemy {
         // which will ensure the game runs at the same speed for
         // all computers.
         this.x += this.speed * dt;
+        this.flatX = Math.floor(this.x);
+        this.flatY = Math.floor(this.y);
+        switch (this.flatX) {
+            case 0:
+                this.enemyXY.splice(0, 1, 1);
+                break;
+            case 101:
+                this.enemyXY.splice(0, 1, 2);
+                break;
+            case 202:
+                this.enemyXY.splice(0, 1, 3);
+                break;
+            case 303:
+                this.enemyXY.splice(0, 1, 4);
+                break;
+            case 404:
+                this.enemyXY.splice(0, 1, 5);
+                break;
         }
+        switch (this.flatY) {
+            case 405:
+                this.enemyXY.splice(1, 1, 1);
+                break;
+            case 322:
+                this.enemyXY.splice(1, 1, 2);
+                break;
+            case 239:
+                this.enemyXY.splice(1, 1, 3);
+                break;
+            case 156:
+                this.enemyXY.splice(1, 1, 4);
+                break;
+            case 73:
+                this.enemyXY.splice(1, 1, 5);
+                break;
+        }
+    }
     
     // Draw the enemy on the screen, required method for game
     render() {
@@ -40,27 +77,43 @@ class Character {
     }
     // Methods
     update() {
-        if (this.x === 0) {
-            this.charXY.splice(0, 1, 1);
-            console.log(this.charXY);
+        switch (this.x) {
+            case 0:
+                this.charXY.splice(0, 1, 1);
+                break;
+            case 101:
+                this.charXY.splice(0, 1, 2);
+                break;
+            case 202:
+                this.charXY.splice(0, 1, 3);
+                break;
+            case 303:
+                this.charXY.splice(0, 1, 4);
+                break;
+            case 404:
+                this.charXY.splice(0, 1, 5);
+                break;
         }
-        if (this.x === 101) {
-            this.charXY.splice(0, 1, 2);
-            console.log(this.charXY);
-        }
-        if (this.x === 202) {
-            this.charXY.splice(0, 1, 3);
-            console.log(this.charXY);
-        }
-        if (this.x === 303) {
-            this.charXY.splice(0, 1, 4);
-            console.log(this.charXY);
-        }
-        if (this.x === 404) {
-            this.charXY.splice(0, 1, 5);
-            console.log(this.charXY);
+        switch (this.y) {
+            case 405:
+                this.charXY.splice(1, 1, 1);
+                break;
+            case 322:
+                this.charXY.splice(1, 1, 2);
+                break;
+            case 239:
+                this.charXY.splice(1, 1, 3);
+                break;
+            case 156:
+                this.charXY.splice(1, 1, 4);
+                break;
+            case 73:
+                this.charXY.splice(1, 1, 5);
+                break;
         }
     }
+
+    
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
@@ -107,11 +160,6 @@ setInterval(deleteEnemy, 500);
 const player = new Character();
 
 function checkCollisions() {
-    for (const bug of allEnemies) {
-        if (Math.floor(bug.x) === Math.floor(player.x)) {
-            console.log('COLLISION');
-        }
-    }
 }
 
 
