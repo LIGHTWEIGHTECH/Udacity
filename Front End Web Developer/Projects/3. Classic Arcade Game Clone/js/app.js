@@ -9,7 +9,7 @@ class Enemy {
         // -20 is to make sure the object is centralized.
         this.y = this.randomStartY - 20;
         this.sprite = 'images/enemy-bug.png';
-        this.speed = Math.floor(Math.random() * (150 - 100) ) + 100;
+        this.speed = Math.floor(Math.random() * (150 - 100)) + 100;
         this.enemyXY = [0, 0];
     }
 
@@ -20,38 +20,34 @@ class Enemy {
         this.x += this.speed * dt;
         this.flatX = Math.floor(this.x);
         this.flatY = Math.floor(this.y);
-        switch (this.flatX) {
-            case :
-                this.enemyXY.splice(0, 1, 1);
-                break;
-            case 50 || 51 || 52 || 53:
-                this.enemyXY.splice(0, 1, 2);
-                break;
-            case 150 || 151 || 152 || 153:
-                this.enemyXY.splice(0, 1, 3);
-                break;
-            case 253 || 254 || 255 || 256:
-                this.enemyXY.splice(0, 1, 4);
-                break;
-            case 354 || 355 || 356 || 357:
-                this.enemyXY.splice(0, 1, 5);
-                break;
+        // X of Enemy.enemyXY
+        if (this.flatX >= -61 && this.flatX <= 40) {
+            this.enemyXY.splice(0, 1, 1);
         }
-        switch (this.flatY) {
-            case 229:
-                this.enemyXY.splice(1, 1, 3);
-                break;
-            case 146:
-                this.enemyXY.splice(1, 1, 4);
-                break;
-            case 63:
-                this.enemyXY.splice(1, 1, 5);
-                break;
+        if (this.flatX >= 41 && this.flatX <= 141) {
+            this.enemyXY.splice(0, 1, 2);
         }
-        console.log(test.enemyXY);
-
+        if (this.flatX >= 142 && this.flatX <= 242) {
+            this.enemyXY.splice(0, 1, 3);
+        }
+        if (this.flatX >= 243 && this.flatX <= 343) {
+            this.enemyXY.splice(0, 1, 4);
+        }
+        if (this.flatX >= 344 && this.flatX <= 444) {
+            this.enemyXY.splice(0, 1, 5);
+        }
+        // Y of Enemy.enemyXY
+        if (this.flatY === 63) {
+            this.enemyXY.splice(1, 1, 5);
+        }
+        if (this.flatY === 146) {
+            this.enemyXY.splice(1, 1, 4);
+        }
+        if (this.flatY === 229) {
+            this.enemyXY.splice(1, 1, 3);
+        }
     }
-    
+
     // Draw the enemy on the screen, required method for game
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -109,18 +105,21 @@ class Character {
         }
     }
 
-    
+
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
     handleInput(key) {
         if (key === 'left' && this.x >= this.walkX) {
             this.x -= this.walkX;
-        } if (key === 'up' && this.y >= this.walkY) {
+        }
+        if (key === 'up' && this.y >= this.walkY) {
             this.y -= this.walkY;
-        } if (key === 'right' && this.x <= (3*this.walkX)) {
+        }
+        if (key === 'right' && this.x <= (3 * this.walkX)) {
             this.x += this.walkX;
-        } if (key === 'down' && this.y <= (4*this.walkY)) {
+        }
+        if (key === 'down' && this.y <= (4 * this.walkY)) {
             this.y += this.walkY;
         }
     }
@@ -141,19 +140,18 @@ const createEnemy = function() {
     } else {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
-        if (u === 0) {
-            test = lastEnemy;
-            u++;
-        }
-    }}
-    // Spawn an enemy every 2 seconds.
+    }
+}
+// Spawn an enemy every 2 seconds.
 setInterval(createEnemy, 2000);
 
 const deleteEnemy = function() {
     if (allEnemies.length >= 1) {
         if (allEnemies[0].x >= 505) {
             allEnemies.splice(0, 1);
-    }}}
+        }
+    }
+}
 
 setInterval(deleteEnemy, 500);
 
