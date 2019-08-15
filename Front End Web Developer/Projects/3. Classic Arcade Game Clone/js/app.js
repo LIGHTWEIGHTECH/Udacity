@@ -69,6 +69,13 @@ class Character {
     }
     // Methods
     update() {
+        // player is @ pos 5
+        document.body.addEventListener('keyup', function(e) {
+            if (e.keyCode === 38 && player.charXY[1] === 5) {
+                player.resetPos();
+            }})
+        // player presses keyup
+        // player resets to start position and gain a point
         switch (this.x) {
             case 0:
                 this.charXY.splice(0, 1, 1);
@@ -122,6 +129,11 @@ class Character {
         if (key === 'down' && this.y <= (4 * this.walkY)) {
             this.y += this.walkY;
         }
+    }
+    resetPos() {
+        this.x = this.walkX * 2;
+        this.y = this.walkY * 6 - 10;
+        this.charXY = [0, 0];
     }
 }
 
@@ -184,3 +196,4 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
