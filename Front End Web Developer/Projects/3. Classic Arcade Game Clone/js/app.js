@@ -72,6 +72,7 @@ class Character {
         // player is @ pos 5
         document.body.addEventListener('keyup', function(e) {
             if (e.keyCode === 38 && player.charXY[1] === 5) {
+                document.getElementById('_score').innerText += 1;
                 player.resetPos();
             }})
         // player presses keyup
@@ -171,7 +172,6 @@ setInterval(deleteEnemy, 500);
 // Place the player object in a variable called player
 const player = new Character();
 
-
 // Tests the location of player vs enemy and if so, reset the player back to start square
 // still buggy
 function checkCollisions() {
@@ -179,6 +179,7 @@ function checkCollisions() {
         if (bugs.enemyXY[0] === player.charXY[0] && bugs.enemyXY[1] === player.charXY[1]) {
             player.x = player.walkX * 2;
             player.y = player.walkY * 5 - 10;
+            document.getElementById('_lives').innerHTML -= 1;
         }
     }
 }
