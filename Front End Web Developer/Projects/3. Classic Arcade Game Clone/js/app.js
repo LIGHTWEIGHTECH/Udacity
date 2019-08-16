@@ -66,13 +66,15 @@ class Character {
         this.y = this.walkY * 5 - 10;
         this.sprite = 'images/char-boy.png';
         this.charXY = [0, 0];
+        this.score = 0;
     }
     // Methods
     update() {
         // player is @ pos 5
         document.body.addEventListener('keyup', function(e) {
             if (e.keyCode === 38 && player.charXY[1] === 5) {
-                document.getElementById('_score').innerText += 1;
+                u++;
+                document.getElementById('_score').innerHTML = u;
                 player.resetPos();
             }})
         // player presses keyup
@@ -140,7 +142,7 @@ class Character {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [];
+let allEnemies = [];
 let lastEnemy = {};
 let test = {};
 let u = 0;
@@ -168,9 +170,8 @@ const deleteEnemy = function() {
 
 setInterval(deleteEnemy, 500);
 
-
 // Place the player object in a variable called player
-const player = new Character();
+let player = new Character();
 
 // Tests the location of player vs enemy and if so, reset the player back to start square
 // still buggy
@@ -180,10 +181,25 @@ function checkCollisions() {
             player.x = player.walkX * 2;
             player.y = player.walkY * 5 - 10;
             document.getElementById('_lives').innerHTML -= 1;
+            gameOver();
         }
     }
 }
 
+// Lives and game-over control
+function gameOver() {
+    if (document.getElementById('_lives').innerHTML === "0") {
+        window.alert('Game Over!');
+        resetGame();
+    }
+}
+
+function resetGame() {
+    player = new Character;
+    allEnemies = [];
+    document.getElementById('_lives').innerHTML = "3";
+    document.getElementById('_score').innerHTML = "0";
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -197,4 +213,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
