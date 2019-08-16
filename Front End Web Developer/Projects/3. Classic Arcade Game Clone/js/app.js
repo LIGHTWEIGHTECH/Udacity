@@ -76,7 +76,8 @@ class Character {
                 u++;
                 document.getElementById('_score').innerHTML = u;
                 player.resetPos();
-            }})
+            }
+        })
         // player presses keyup
         // player resets to start position and gain a point
         switch (this.x) {
@@ -162,17 +163,18 @@ const createEnemy = function() {
         if (intervalRate > 700) {
             increaseSpeed += 2;
             intervalRate -= 20;
-            // Spawn an enemy every 0.8 seconds, increased spawntime by "intervalRate".
-            stopSpawn(int);
-            int = setInterval(createEnemy, intervalRate);           
         }
-        lastEnemy.speed += increaseSpeed;
+        // Spawn an enemy every 0.8 seconds, increased spawntime by "intervalRate".
+        stopSpawn(int);
+        int = setInterval(createEnemy, intervalRate);
     }
+    lastEnemy.speed += increaseSpeed;
+}
 
-    function swarm() {
-        createEnemy();
-        createEnemy();
-    }
+function swarm() {
+    createEnemy();
+    createEnemy();
+}
 // Initiate spawning
 createEnemy();
 
