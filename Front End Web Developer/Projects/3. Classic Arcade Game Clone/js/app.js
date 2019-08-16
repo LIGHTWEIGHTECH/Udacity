@@ -160,9 +160,9 @@ const createEnemy = function() {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
         // increase enemie's speed over time
-        if (intervalRate > 700) {
-            increaseSpeed += 2;
-            intervalRate -= 20;
+        if (intervalRate > 800) {
+            increaseSpeed += 1;
+            intervalRate -= 10;
         }
         // Spawn an enemy every 0.8 seconds, increased spawntime by "intervalRate".
         stopSpawn(int);
