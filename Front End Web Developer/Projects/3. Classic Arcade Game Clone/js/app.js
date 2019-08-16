@@ -146,6 +146,9 @@ let allEnemies = [];
 let lastEnemy = {};
 let test = {};
 let u = 0;
+let increaseSpeed = 0;
+let intervalRate = 1600;
+let int = 0;
 const createEnemy = function() {
     let createdEnemy = new Enemy;
     // Checks if the newly created Object (createdEnemy), does not have
@@ -155,10 +158,27 @@ const createEnemy = function() {
     } else {
         allEnemies.push(createdEnemy);
         lastEnemy = createdEnemy;
+        // increase enemie's speed over time
+        if (intervalRate > 700) {
+            increaseSpeed += 2;
+            intervalRate -= 20;
+            // Spawn an enemy every 0.8 seconds, increased spawntime by "intervalRate".
+            stopSpawn(int);
+            int = setInterval(createEnemy, intervalRate);           
+        }
+        lastEnemy.speed += increaseSpeed;
     }
+
+    function swarm() {
+        createEnemy();
+        createEnemy();
+    }
+// Initiate spawning
+createEnemy();
+
+function stopSpawn() {
+    clearInterval(int);
 }
-// Spawn an enemy every 2 seconds.
-setInterval(createEnemy, 2000);
 
 const deleteEnemy = function() {
     if (allEnemies.length >= 1) {
@@ -199,6 +219,10 @@ function resetGame() {
     allEnemies = [];
     document.getElementById('_lives').innerHTML = "3";
     document.getElementById('_score').innerHTML = "0";
+    increaseSpeed = 0;
+    intervalRate = 1600;
+    int = 0;
+    stopSpawn(int);
 }
 
 // This listens for key presses and sends the keys to your
