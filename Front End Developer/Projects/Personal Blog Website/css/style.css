@@ -1,69 +1,65 @@
-body {
-    background: whitesmoke;
-}
-
-.container {
-    display: grid;
-    margin: 5% 10% 5% 10%;
-    grid-template-rows: repeat(4, auto);
-}
-
-@media screen and (max-width: 900px) {
-    .container {
-        grid-template-areas:
-            "hd hd"
-            "nav nav"
-            "main main"
-            "ft ft";
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .container {
-        grid-template-columns: 25% 1fr;
+@media screen and (min-width: 900px){
+    .container{
+        display: grid;
+        grid-template-columns: 20% 80%;
         grid-template-areas:
             "hd hd"
             "nav main"
             "x main"
             "ft ft";
     }
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li{
+        margin: 10%;
+        padding: 10px 40px 10px 40px;
+    }
+
 }
 
-header {
+.box{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background: whitesmoke;
+}
+
+main{
+    grid-area: main;
+}
+
+h1 {
+    text-align: center;
+
+}
+
+header{
     grid-area: hd;
-    padding-left: 3%;
-    background: rgb(230, 230, 230);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background: rgb(210, 210, 210);
 }
 
-nav {
+nav{
     grid-area: nav;
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    margin-right: 20px;
-    justify-content: center;
-    background: rgb(230, 230, 230);
 }
 
-nav ul {
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
     padding: 0;
 }
 
-nav li {
+nav li{
     list-style-type: none;
     border: solid black 1px;
     border-radius: 5px;
     text-align: center;
-    padding: 5px 20px 5px 20px;
-    box-shadow: 2px 4px 10px;
-    margin: 20px;
+    box-shadow: 2px 3px 10px;
 }
-
-nav li:hover {
-    background: rgb(210, 210, 210);
+@media screen and (max-width: 899px){
+    nav li{
+        padding: 5px 10px 5px 10px;
+    }
 }
 
 nav li a {
@@ -71,58 +67,23 @@ nav li a {
     color: black;
 }
 
-main {
-    grid-area: main;
+nav li a:hover {
+    text-decoration: underline;
+    color: grey;
 }
 
-article {
-    background: rgb(230, 230, 230);
-    border-radius: 10px;
-    padding: 5px 50px 5px 30px;
-    margin-bottom: 15px;
-}
-
-section {
-    padding: 10px;
-}
-
-footer {
+footer{
     grid-area: ft;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background: rgb(210, 210, 210);
-    border-radius: 10px;
-    margin-top: 5px;
+    padding: 0px 5% 0px 5% !important;
 }
 
-footer p{
-    padding: 0 20px 0 20px;
+main p{
+    margin-left: 3%;
+    margin-right: 2%;
 }
 
-h1 {
-    text-decoration: underline;
-}
-
-h2 {
-    text-align: center;
-    font-style: italic;
-}
-
-h3 {
-    font-variant: small-caps;
-    border-left: 6px solid rgb(180, 180, 180);
-    background-image: linear-gradient(to right, rgb(225, 225, 225), rgb(230, 230, 230));
-    padding-left: 10px;
-}
-
-.imgRight{
-    float: right;
-    padding-right: 20px;
-    margin: 10px;
-}
-
-.imgLeft{
-    float: left;
-    margin: 10px;
+main h2{
+    margin-left: 1%;
 }
