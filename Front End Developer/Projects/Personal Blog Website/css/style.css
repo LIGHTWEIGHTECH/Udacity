@@ -1,25 +1,8 @@
-@media screen and (min-width: 900px) {
-    .container {
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-template-areas:
-            "hd hd"
-            "nav main"
-            "x main"
-            "ft ft";
-    }
+@import "large.css";
+@import "medium.css";
+@import "small.css";
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav li {
-        margin: 10%;
-        padding: 10px 40px 10px 40px;
-    }
-
-}
+/* Classes */
 
 .box {
     padding: 10px;
@@ -28,14 +11,31 @@
     background: whitesmoke;
 }
 
-main {
-    grid-area: main;
+.card {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 3px;
+    max-width: 230px;
+    background: burlywood;
 }
+
+.avatar {
+    width: 50px;
+    height: 50px
+}
+
+.author span {
+    font-size: 0.8em;
+    padding: 10px;
+}
+
+/* Headers */
 
 h1 {
     text-align: center;
-
 }
+
+/* HTML elements */
 
 header {
     grid-area: hd;
@@ -59,12 +59,6 @@ nav li {
     box-shadow: 2px 3px 10px;
 }
 
-@media screen and (max-width: 899px) {
-    nav li {
-        padding: 5px 10px 5px 10px;
-    }
-}
-
 nav li a {
     text-decoration: none;
     color: black;
@@ -75,11 +69,8 @@ nav li a:hover {
     color: grey;
 }
 
-footer {
-    grid-area: ft;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5% 0px 5% !important;
+main {
+    grid-area: main;
 }
 
 main p {
@@ -89,4 +80,11 @@ main p {
 
 main h2 {
     margin-left: 1%;
+}
+
+footer {
+    grid-area: ft;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5% 0px 5% !important;
 }

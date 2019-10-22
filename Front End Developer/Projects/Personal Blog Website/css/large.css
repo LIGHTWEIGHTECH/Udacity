@@ -1,0 +1,27 @@
+@media screen and (min-width: 900px) {
+    
+    /* Classes */
+    .container {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas:
+            "hd hd"
+            "nav main"
+            "x main"
+            "ft ft";
+    }
+
+    /* HTML Elements */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10%;
+        padding: 10px 40px 10px 40px;
+    }
+
+
+
+}
