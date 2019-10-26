@@ -19,12 +19,7 @@
 */
 
 const navbar = document.querySelector('#navbar__list');
-const sect1 = document.querySelector('#section1');
-const sect2 = document.querySelector('#section2');
-const sect3 = document.querySelector('#section3');
 const sections = document.querySelectorAll('section');
-
-
 
 /**
  * End Global Variables
@@ -41,7 +36,12 @@ const sections = document.querySelectorAll('section');
 */
 
 // build the nav
-
+const navBuilder = () => {
+    for (let section of sections) {
+    let temp = `<li class="menu__link">${section.querySelector('h2').innerText}</li>`;
+    navbar.innerHTML += temp;
+    };
+};
 
 // Add class 'active' to section when near top of viewport
 
@@ -56,16 +56,10 @@ const sections = document.querySelectorAll('section');
 */
 
 // Build menu 
-const navBuilder = () => {
-    for (let section of sections) {
-    let temp = `<li class="menu__link">${section.querySelector('h2').innerText}</li>`;
-    navbar.innerHTML += temp;
-    };
-};
-
 navBuilder();
 
 // Scroll to section on link click
+
 
 // Set sections as active
 

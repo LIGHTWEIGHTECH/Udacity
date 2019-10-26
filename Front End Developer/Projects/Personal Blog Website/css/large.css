@@ -44,6 +44,9 @@
         width: 60px;
     }
 
-
+    button {
+        width: 100px;
+        margin-left: 10px;
+    }
 
 }

@@ -15,11 +15,11 @@
     display: flex;
     border: 1px solid black;
     border-radius: 3px;
-    max-width: 230px;
-    max-height: 50px;
     background: burlywood;
     margin: 3px;
-
+    justify-content: flex-start;
+    max-height: 50px;
+    max-width: 220px;;
 }
 
 .avatar {
@@ -27,14 +27,24 @@
     height: 50px;
 }
 
+.author {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .author span {
     font-size: 0.8em;
-    padding: 10px;
+    padding-left: 10px;
 }
 
 .social {
     display: flex;
     justify-content: space-between;
+}
+
+.author .title {
+    font-size: 1.2em;
 }
 
 /* Headers */
@@ -101,4 +111,37 @@ footer {
 footer img {
     width: 30px;
     height: 30px;
+}
+
+button {
+    background: burlywood;
+    border-radius: 5px;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+    background: whitesmoke;
+}
+
+button a:hover {
+    text-decoration: none;
+}
+
+figcaption {
+    font-size: 0.7em;
+    align-self: center;
+    position: absolute;
+    margin-top: 38px;
+    background: rgba(255, 255, 255, 0.7)
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
 }
