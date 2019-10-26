@@ -20,6 +20,7 @@
 
 const navbar = document.querySelector('#navbar__list');
 const sections = document.querySelectorAll('section');
+const header = document.querySelector('.page__header');
 
 /**
  * End Global Variables
@@ -27,7 +28,10 @@ const sections = document.querySelectorAll('section');
  * 
 */
 
-
+// show or hide the navigation
+header.firstElementChild.addEventListener('click', () => {
+    navbar.classList.toggle('hidden');
+}) ;
 
 /**
  * End Helper Functions
@@ -38,9 +42,10 @@ const sections = document.querySelectorAll('section');
 // build the nav
 const navBuilder = () => {
     for (let section of sections) {
-    let temp = `<li class="menu__link">${section.querySelector('h2').innerText}</li>`;
-    navbar.innerHTML += temp;
-    };
+        let temp = `<li class="menu__link">${section.querySelector('h2').innerText}</li>`;
+        navbar.innerHTML += temp;
+        };
+    navbar.classList.toggle('hidden');
 };
 
 // Add class 'active' to section when near top of viewport
@@ -60,6 +65,11 @@ navBuilder();
 
 // Scroll to section on link click
 
+navbar.addEventListener('click', e => {
+        window.scrollTo(0, 0);
+        navbar.classList.toggle('hidden');
+})
+    
 
 // Set sections as active
 
