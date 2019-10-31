@@ -66,8 +66,9 @@ navBuilder();
 // Scroll to section on link click
 
 navbar.addEventListener('click', e => {
-        window.scrollTo(0, 0);
-        navbar.classList.toggle('hidden');
+    let targetSect = document.querySelector(`[data-nav="${e.target.innerText}"]`);
+    window.scrollTo(0, targetSect.offsetTop);
+    navbar.classList.toggle('hidden');
 })
     
 
