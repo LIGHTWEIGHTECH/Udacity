@@ -67,6 +67,8 @@ navBuilder();
 
 navbar.addEventListener('click', e => {
     let targetSect = document.querySelector(`[data-nav="${e.target.innerText}"]`);
+    document.querySelector('.your-active-class').classList.remove('your-active-class');
+    targetSect.classList.add('your-active-class');
     window.scrollTo(0, targetSect.offsetTop);
     navbar.classList.toggle('hidden');
 })
