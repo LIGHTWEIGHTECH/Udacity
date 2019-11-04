@@ -1,9 +1,0 @@
-//A mixin is a technique that copies data and functionality from a source object (or source objects) to a target object. 
-We can use ES6's Object.assign() to return a target object with properties from one or more source objects "mixed into" that target object.
-
-//A factory function creates objects. It is invoked as normal function, not with the new operator. 
-Functional mixins take things a bit further by accepting a mixin as an argument, copies properties and methods from the mixin, and returns a new object.
-
-//The Revealing Module Pattern is a slight variation on the Module Pattern. 
-IIFE's, local variables/functions, and a returned object literal with revealed data make up the structure and syntax of the Revealing Module Pattern. 
-While it still maintains encapsulation of data, certain variables and functions are returned in an object literal.
