@@ -35,7 +35,7 @@ const server = app.listen(port, () => {
 const getRoute = app.get('/all', (req, res) => {
     // Callback function to complete GET '/all'
     res.send(projectData);
-  })
+})
 
 
 
@@ -45,5 +45,4 @@ app.post('/all', (req, res) => {
     projectData = req.body;
     console.log(projectData);
     res.send(projectData);
-  })
-
+})

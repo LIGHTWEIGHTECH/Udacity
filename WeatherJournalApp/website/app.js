@@ -5,16 +5,16 @@ const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip='
 
 // testing with these credentials
 const country = 'nl';
-let zipcode = '2025';
+let zipcode = '2025'
 
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 
 // Event listener to add function to existing HTML DOM element
-document.getElementById('generate').addEventListener('click', async() => {
+document.getElementById('generate').addEventListener('click', async () => {
     /* Function called by event listener */
-    postData('/all', await getAPI(baseURL, zipcode = document.getElementById('zip').value, apiKey, country))
+    postData('/all', await getAPI(baseURL, zipcode = document.getElementById('zip').value;, apiKey, country))
 })
 
 /* Function to GET Web API Data*/
