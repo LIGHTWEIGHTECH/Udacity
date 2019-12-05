@@ -3,8 +3,9 @@
 let apiKey = '56d73533e302ebbdd668ab635bed0a66';
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip='
 
-const country = 'nl'
-let zipcode = '2025'
+// testing with these credentials
+const country = 'nl';
+let zipcode = '2025';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -12,8 +13,9 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', () => {
+    zipcode = document.getElementById('zip').value;
     /* Function called by event listener */
-    let zipcode = document.getElementById('zip').value;
+    postData('/', getAPI(baseURL, zipcode, apiKey, country));
 });
 
 /* Function to GET Web API Data*/
@@ -27,9 +29,8 @@ const getAPI = async (url, zip, key, location) => {
 };
 
 /* Function to POST data */
-const postData = async (url = '', data = {}) => {
-    console.log(data);
-    const response = await fetch(url, {
+const postData = async (url = '/', data = {}) => {
+    const postResponse = await fetch(url, {
         method: 'POST',
         credentails: 'same-origin',
         headers: {
@@ -39,11 +40,27 @@ const postData = async (url = '', data = {}) => {
     })
 
     try {
-        return await response.text();
+
+        return await postResponse.json();
     } catch (err) {
         console.log("Error(postData):", err);
-        console.log(response.json());
+        console.log(postResponse.json());
     }
 };
 
 /* Function to GET Project Data */
+const getData = async (url = '/') => {
+    const getResponse = await fetch(url, {
+        method: 'GET',
+        credentails: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    try {
+        return await getResponse.json();
+    } catch (err) { 
+        console.log("Error(getData):", err);
+    }
+};

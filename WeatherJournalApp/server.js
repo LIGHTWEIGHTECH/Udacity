@@ -31,27 +31,19 @@ const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`)
 });
 
-// Callback function to complete GET '/all'
-app.get('/all', (req, res) => {
-    res.send(projectData)
-    return projectData
-});
+// GET method route
+const getRoute = app.get('/all', (req, res) => {
+    // Callback function to complete GET '/all'
+    res.send(projectData);
+  })
 
-// Post Route
-app.post('/', (req, res) => {
-    res.send('POST Received');
-});
 
-// Initialize all route with a callback function
-let data = [];
 
-app.post('/add', (req, res) => {
-    const request = req.body;
-    console.log(request);
-    let newData = {}
-    newData.temp = request["main"]["temp"]
-    data.push(newData);
+// POST method route
+app.post('/all', (req, res) => {
+    // Initialize all route with a callback function
+    projectData = req.body;
+    console.log(projectData);
+    res.send(projectData);
+  })
 
-    res.send('POST Received:' + JSON.stringify(data));
-    console.log(data);
-});
