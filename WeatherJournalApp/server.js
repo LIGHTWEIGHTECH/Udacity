@@ -42,7 +42,14 @@ const getRoute = app.get('/all', (req, res) => {
 // POST method route
 app.post('/all', (req, res) => {
     // Initialize all route with a callback function
-    projectData = req.body;
+    projectData.temp = req.body.main.temp;
+    //console.log(req.body);
+    res.send(projectData);
+})
+
+app.post('/input', (req, res) => {
+    projectData.date = req.body.date;
+    projectData.userR = req.body.userR;
     console.log(projectData);
     res.send(projectData);
 })

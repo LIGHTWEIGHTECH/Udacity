@@ -14,7 +14,7 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', async () => {
     /* Function called by event listener */
-    postData('/all', await getAPI(baseURL, zipcode = document.getElementById('zip').value;, apiKey, country))
+    postData('/all', await getAPI(baseURL, zipcode = document.getElementById('zip').value, apiKey, country))
 })
 
 /* Function to GET Web API Data*/
@@ -39,7 +39,7 @@ const postData = async (url = '', data = {}) => {
     })
 
     try {
-
+        await postInput();
         return await postResponse.json();
     } catch (err) {
         console.log("Error(postData):", err);
@@ -47,8 +47,30 @@ const postData = async (url = '', data = {}) => {
     }
 }
 
+/* Function to POST temp, date and user response */
+const postInput = async (url = '/input', data = {
+    userR: document.getElementById('feelings').value,
+    date: newDate,
+}) => {
+    const inputResponse = await fetch(url, {
+        method: 'POST',
+        credentails: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+
+    try {
+        return await inputResponse.json();
+    } catch (err) {
+        console.log("Error(postInput):", err);
+        console.log(inputResponse.json());
+    }
+}
+
 /* Function to GET Project Data */
-const getData = async (url = '/') => {
+const getData = async (url = '/all') => {
     const getResponse = await fetch(url, {
         method: 'GET',
         credentails: 'same-origin',
