@@ -29,7 +29,8 @@ const getAPI = async (url, zip, key, location) => {
     try {
         return await res.json();
     } catch (err) {
-        console.log("Error(getAPI):", err);
+        alert("Error(getAPI): Unable to retrieve API", err);
+        console.log(res.json())
     }
 }
 
@@ -48,8 +49,8 @@ const postData = async (url = '', data = {}) => {
         console.log(await postResponse.json());
         return await postInput();
     } catch (err) {
-        console.log("Error(postData):", err);
-        console.log(postResponse.json());
+            alert("Error(postData): Not a valid zipcode", err);
+            console.log(postResponse.json());
     }
 }
 
@@ -70,7 +71,7 @@ const postInput = async (url = '/input', data = {
     try {
         return await inputResponse.json();
     } catch (err) {
-        console.log("Error(postInput):", err);
+        alert("Error(postInput): Not a valid input", err);
         console.log(inputResponse.json());
     }
 }
@@ -88,6 +89,7 @@ const getData = async (url = '/all') => {
     try {
         return await getResponse.json();
     } catch (err) {
-        console.log("Error(getData):", err);
+        alert("Error(getData): Unable to retrieve data", err);
+        console.log(getResponse.json())
     }
 }
