@@ -4,11 +4,9 @@
 This project required to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
 ## Instructions
-// Start
-Enter "node server.js" in project folder's terminal (..\WeatherJournalApp) to start up server.
+To start enter "node server.js" in project folder's terminal (..\WeatherJournalApp) to start up server.
 Port is set to 3000, navigate to "http://localhost:3000/".
 
-// Testing
 To test the code without using the template on "index.html", see "app.js" (line 6).
 If "country" is not set the default location will be "us".
 
