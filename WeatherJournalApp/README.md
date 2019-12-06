@@ -1,10 +1,20 @@
 # Weather-Journal App Project
 
 ## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+This project required to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
 ## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+// Start
+Enter "node server.js" in project folder's terminal (..\WeatherJournalApp) to start up server.
+Port is set to 3000, navigate to "http://localhost:3000/".
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+// Testing
+To test the code without using the template on "index.html", see "app.js" (line 6).
+If "country" is not set the default location will be "us".
+
+In order to receive the current "projectData" use "getAPI();" in console.
+
+If invalid input has been used an alert window will tell what it is.
+
+## Known Issues
+No idea what unit the temprature value is, so unable to convert.
