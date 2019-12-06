@@ -14,7 +14,11 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', async () => {
     /* Function called by event listener */
-    postData('/all', await getAPI(baseURL, zipcode = document.getElementById('zip').value, apiKey, country))
+    let newData = await postData('/all', await getAPI(baseURL, zipcode = document.getElementById('zip').value, apiKey, country));
+    console.log(newData);
+    document.getElementById('temp').innerHTML = newData.temp;
+    document.getElementById('date').innerHTML = newData.date;
+    document.getElementById('content').innerHTML = newData.userR;
 })
 
 /* Function to GET Web API Data*/
@@ -39,8 +43,8 @@ const postData = async (url = '', data = {}) => {
     })
 
     try {
-        await postInput();
-        return await postResponse.json();
+        console.log(await postResponse.json());
+        return await postInput();
     } catch (err) {
         console.log("Error(postData):", err);
         console.log(postResponse.json());
