@@ -42,7 +42,9 @@ app.post('/api', (req, res) => {
     // Initialize all route with a callback function
     projectData.temp = req.body.main.temp;
     //console.log(req.body);
-    res.send({ message: "POST Received" });
+    res.send({
+        message: "POST Received"
+    });
 })
 
 app.post('/input', (req, res) => {

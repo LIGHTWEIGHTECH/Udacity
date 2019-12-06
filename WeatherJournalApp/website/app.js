@@ -7,7 +7,7 @@ const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip='
 // Input will no longer work, default country = US
 // const country = 'nl';
 // let zipcode = '2025'
- 
+
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -49,8 +49,8 @@ const postData = async (url = '', data = {}) => {
         console.log(await postResponse.json());
         return await postInput();
     } catch (err) {
-            alert("Error(postData): Not a valid zipcode", err);
-            console.log(postResponse.json());
+        alert("Error(postData): Not a valid zipcode", err);
+        console.log(postResponse.json());
     }
 }
 
