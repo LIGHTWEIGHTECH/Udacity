@@ -1,4 +1,6 @@
-export { checkForName }
+export {
+    checkForName
+}
 
 function checkForName(inputText) {
     console.log("::: Running checkForName :::", inputText);
@@ -10,7 +12,7 @@ function checkForName(inputText) {
         "Georgiou"
     ]
 
-    if(names.includes(inputText)) {
+    if (names.includes(inputText)) {
         alert("Welcome, Captain!")
     }
 }
