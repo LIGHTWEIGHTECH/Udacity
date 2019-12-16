@@ -7,6 +7,7 @@ Front End Nanodegree Courses & Project Repository of Bas Brakel
 * [Projects](#projects)
 * [Courses](#courses)
 * [Style-Guide](#style-guide)
+* [Disclaimer](#disclaimer)
 
 ## Projects
 
