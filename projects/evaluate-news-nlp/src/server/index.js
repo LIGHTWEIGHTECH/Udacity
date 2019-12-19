@@ -1,12 +1,27 @@
-var path = require('path')
-const express = require('express')
+const path = require('path')
 const mockAPIResponse = require('./mockAPI.js')
+const express = require('express');
+const bodyParser = require('body-parser');
 
-const app = express()
+// SERVER
+const app = express();
+
+/* Start Middleware*/
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(bodyParser.json());
+
+// Cors for cross origin allowance
+const cors = require('cors');
+app.use(cors());
+/* End Middleware*/
 
 app.use(express.static('dist'))
 
 console.log(__dirname)
+
+app.use(cors())
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
