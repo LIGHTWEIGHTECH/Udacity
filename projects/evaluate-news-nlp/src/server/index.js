@@ -13,6 +13,8 @@ var textapi = new aylien({
   application_key: process.env.API_KEY
 })
 
+const userInput = {}
+
 // START SERVER
 const app = express();
 
@@ -31,8 +33,6 @@ app.use(express.static('dist'))
 
 console.log(__dirname)
 
-app.use(cors())
-
 app.get('/', function (req, res) {
   res.sendFile('dist/index.html')
 })
@@ -46,7 +46,7 @@ app.get('/test', function (req, res) {
   res.send(mockAPIResponse)
 })
 
-app.get('/api', function (req, res) {
-  console.log(textapi)
-  res.send(textapi)
+app.post('/api', function (req, res) {
+  userInput = req.body
+  console.log(userInput)
 })
