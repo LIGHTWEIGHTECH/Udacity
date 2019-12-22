@@ -5,6 +5,10 @@ import {
     handleSubmit
 } from './js/formHandler'
 
+import {
+    apiRes
+} from './js/getAPIdata'
+
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/form.scss'

@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1577046960994" clover="3.2.0">
-  <project timestamp="1577046960994" name="All files">
-    <metrics statements="15" coveredstatements="2" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="1" elements="20" coveredelements="3" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
+<coverage generated="1577051857399" clover="3.2.0">
+  <project timestamp="1577051857399" name="All files">
+    <metrics statements="24" coveredstatements="13" conditionals="6" coveredconditionals="4" methods="6" coveredmethods="5" elements="36" coveredelements="22" complexity="0" loc="24" ncloc="24" packages="1" files="3" classes="3"/>
     <file name="formHandler.js" path="C:\Users\basbr\Google Drive\School\Udacity\projects\evaluate-news-nlp\src\client\js\formHandler.js">
-      <metrics statements="15" coveredstatements="2" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="5" count="0" type="cond" truecount="0" falsecount="1"/>
-      <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+      <metrics statements="13" coveredstatements="8" conditionals="3" coveredconditionals="2" methods="4" coveredmethods="3"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="cond" truecount="1" falsecount="1"/>
       <line num="7" count="0" type="stmt"/>
-      <line num="8" count="0" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
+      <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
       <line num="13" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="29" count="0" type="stmt"/>
-      <line num="30" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="35" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+    </file>
+    <file name="getAPIdata.js" path="C:\Users\basbr\Google Drive\School\Udacity\projects\evaluate-news-nlp\src\client\js\getAPIdata.js">
+      <metrics statements="7" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="1" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+    </file>
+    <file name="nameChecker.js" path="C:\Users\basbr\Google Drive\School\Udacity\projects\evaluate-news-nlp\src\client\js\nameChecker.js">
+      <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="12" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>
