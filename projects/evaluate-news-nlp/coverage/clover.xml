@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1577045424760" clover="3.2.0">
-  <project timestamp="1577045424760" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1577046960994" clover="3.2.0">
+  <project timestamp="1577046960994" name="All files">
+    <metrics statements="15" coveredstatements="2" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="1" elements="20" coveredelements="3" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
+    <file name="formHandler.js" path="C:\Users\basbr\Google Drive\School\Udacity\projects\evaluate-news-nlp\src\client\js\formHandler.js">
+      <metrics statements="15" coveredstatements="2" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="5" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>
