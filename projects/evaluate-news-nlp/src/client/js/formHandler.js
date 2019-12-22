@@ -10,9 +10,11 @@ const handleSubmit = async (event) => {
             alert('Not a valid input')
         }
     }
-    let newData = { text: await formText() }
+    let newData = {
+        text: await formText()
+    }
     // console.log(newData)
-    
+
 
 
     console.log("::: Form Submitted :::")
@@ -23,19 +25,18 @@ const handleSubmit = async (event) => {
             'Content-Type': 'application/json',
         },
         body: await JSON.stringify(newData), // body data type must match "Content-Type" header        
-      }) 
-      try {
+    })
+    try {
         const newData = await response.json();
         // console.log(newData);
         let confi = newData.confidence * 100
         document.getElementById('results').innerHTML = `The language of this sentence is ${newData.lang}, I'm ${Math.round(confi)} procent sure about it!`
-      } catch(error) {
-      console.log("error", error);
-      // appropriately handle the error
-      }
+    } catch (error) {
+        console.log("error", error);
+        // appropriately handle the error
+    }
 }
 
 export {
     handleSubmit
 }
-

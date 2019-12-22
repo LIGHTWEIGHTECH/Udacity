@@ -49,4 +49,7 @@ app.get('/test', function (req, res) {
 app.post('/api', function (req, res) {
   textapi.language(req.body, (error, response) => {
     if (error === null) {
-      res.send(response)}})})
+      res.send(response)
+    }
+  })
+})
