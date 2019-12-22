@@ -53,3 +53,5 @@ app.post('/input', (req, res) => {
     console.log(projectData);
     res.send(projectData);
 })
+
+export { getRoute }
