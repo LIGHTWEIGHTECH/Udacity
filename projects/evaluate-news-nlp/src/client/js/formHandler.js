@@ -15,19 +15,17 @@ const handleSubmit = async (event) => {
             alert('Not a valid input', error)
         }
     }
-    let formData = {
-        text: await formText()
-            .catch(function (error) {
-                console.error(error)
-            })
+    try {
+        let formData = {
+            text: await formText()
+        }
+        apiRes(await formData)
+        console.log("::: Form Submitted :::")
+    } catch (error) {
+        console.error(error)
     }
-    // console.log(newData)
-    console.log("::: Form Submitted :::")
-    apiRes(formData)
-        .catch(function (error) {
-            console.error(error)
-        })
 }
+// console.log(newData)
 
 export {
     handleSubmit
