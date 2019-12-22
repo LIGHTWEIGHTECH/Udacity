@@ -13,7 +13,7 @@ var textapi = new aylien({
   application_key: process.env.API_KEY
 })
 
-const userInput = {}
+let userInput = {}
 
 // START SERVER
 const app = express();
@@ -47,6 +47,6 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/api', function (req, res) {
-  userInput = req.body
-  console.log(userInput)
-})
+  textapi.language(req.body, (error, response) => {
+    if (error === null) {
+      res.send(response)}})})
