@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
+const regeneratorRuntime = require("regenerator-runtime")
 
 const express = require('express');
 const bodyParser = require('body-parser');
