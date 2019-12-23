@@ -4,7 +4,6 @@ let newDate = () => {
     return d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 }
 
-
 // Exports
 export {
     newDate

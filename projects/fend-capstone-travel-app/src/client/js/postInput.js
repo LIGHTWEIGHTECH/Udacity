@@ -20,4 +20,6 @@ const postInput = async (url = '/input', data = {
 }
 
 // Exports
-export { postInput }
+export {
+    postInput
+}
