@@ -1,12 +1,6 @@
-/* Variables */
-// Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
-
-/* Function to POST temp, date and user response */
 const postInput = async (url = '/input', data = {
     userR: document.getElementById('feelings').value,
-    date: newDate,
+    date: Client.newDate(),
 }) => {
     const inputResponse = await fetch(url, {
         method: 'POST',
@@ -25,4 +19,5 @@ const postInput = async (url = '/input', data = {
     }
 }
 
+// Exports
 export { postInput }

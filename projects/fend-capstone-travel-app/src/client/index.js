@@ -15,6 +15,10 @@ import {
     postInput
 } from './js/postInput'
 
+import {
+    newDate
+} from './js/genDate'
+
 import './styles/style.scss'
 
 /* Global Variables */
@@ -36,5 +40,6 @@ export {
     getAPI,
     getData,
     postData,
-    postInput
+    postInput,
+    newDate
 }
