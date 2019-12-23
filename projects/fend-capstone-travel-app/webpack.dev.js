@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const rm = require('rm')
 
 module.exports = {
     entry: './src/client/index.js',
@@ -12,10 +13,6 @@ module.exports = {
         library: 'Client'
     },
     mode: 'development',
-    devtool: 'source-map',
-    devServer: {
-        port: 3000
-    },
     module: {
         rules: [
             {

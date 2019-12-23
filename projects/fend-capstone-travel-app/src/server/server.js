@@ -29,7 +29,7 @@ const server = app.listen(port, () => {
 
 
 // GET Routes
-const getRoute = app.get('/all', (req, res) => {
+app.get('/all', (req, res) => {
     res.send(projectData);
 })
 
@@ -48,8 +48,3 @@ app.post('/input', (req, res) => {
     console.log(projectData);
     res.send(projectData);
 })
-
-// Exports
-export {
-    getRoute
-}
