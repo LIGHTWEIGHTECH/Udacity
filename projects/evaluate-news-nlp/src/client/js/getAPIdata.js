@@ -11,7 +11,18 @@ const apiRes = async (input, url = 'http://localhost:8081/api') => {
         let newData = await response.json()
         // console.log(newData);
         let confi = newData.confidence * 100
-        document.getElementById('results').innerHTML = `The language of this sentence is ${newData.lang}, I'm ${Math.round(confi)} procent sure about it!`
+        switch (newData.lang) {
+            case "en":
+                return document.getElementById('results').innerHTML = `The language of this sentence is English, I'm ${Math.round(confi)} procent sure about it!`
+            case "br":
+                return document.getElementById('results').innerHTML = `The language of this sentence is Brazilian, I'm ${Math.round(confi)} procent sure about it!`
+            case "nl":
+                return document.getElementById('results').innerHTML = `The language of this sentence is Dutch, I'm ${Math.round(confi)} procent sure about it!`
+            case "de":
+                return document.getElementById('results').innerHTML = `The language of this sentence is German, I'm ${Math.round(confi)} procent sure about it!`
+            default:
+                return document.getElementById('results').innerHTML = `The language of this sentence is ${newData.lang}, I'm ${Math.round(confi)} procent sure about it!`
+        }
     } catch (error) {
         console.log("error", error);
         // appropriately handle the error
