@@ -2,11 +2,19 @@ import {
     apiRes
 } from "./getAPIdata"
 
+/**
+ * Function to handle the input given by user and chain returns this to apiRes()
+ * @param {*} event - Catch mouse event to cancel page refresh
+ */
 const handleSubmit = async (event) => {
     if (event.cancelable) {
         event.preventDefault()
     }
-    // check what text was put into the form field
+    /**
+     * Checks if the input is valid, returns input to checkForName()
+     * @param {string} [input=document.getElementById('name').value] - Check what text was put into the form field
+     * @returns - If there is input by the user, return it
+     */
     let formText = async (input = document.getElementById('name').value) => {
         try {
             Client.checkForName(input)
