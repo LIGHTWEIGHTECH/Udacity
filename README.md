@@ -27,7 +27,6 @@ The following is a list of the courses associated with the Front End Nanodegree.
 * C2 - JavaScript & The DOM - Completed (no files)
 * C3 - Web API's and Asynchronous Applications - Completed (no files)
 * [C4 - Build Tools and Single Page Web Apps - Completed](https://github.com/bbrakel/Udacity/tree/master/courses/c4)
-* C5 - FEND Capstone - Not Started
 
 ## Style-Guide
 
