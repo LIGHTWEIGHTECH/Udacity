@@ -16,8 +16,8 @@ The following is a list of current projects required to complete the Front End N
 1. [Personal Blog Website - Completed](https://github.com/bbrakel/Udacity/tree/master/projects/personal-blog-website)
 2. [Landing Page- Completed](https://github.com/bbrakel/Udacity/tree/master/projects/landing-page)
 3. [Weather Journal App- Completed](https://github.com/bbrakel/Udacity/tree/master/projects/weather-journal-app)
-4. [Evaluate A News Article with Natural Language Processing- In Progress](https://github.com/bbrakel/Udacity/tree/master/projects/evaluate-news-nlp)
-5. Capstone - Travel App - Not Started
+4. [Evaluate A News Article with Natural Language Processing- Completed](https://github.com/bbrakel/Udacity/tree/master/projects/evaluate-news-nlp)
+5. [Capstone - Travel App - In Progress](https://github.com/bbrakel/Udacity/tree/master/projects/fend-capstone-travel-app)
 
 ## Courses
 
