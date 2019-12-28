@@ -6,6 +6,7 @@
  * @returns - An JSON object with data based on input
  */
 const handlePost = async (url = '', data = {}) => {
+    console.log("::: INITIATED: postData.js > handlePost() :::")
     const postRes = await fetch(url, {
         // Default options are marked with *
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -21,6 +22,7 @@ const handlePost = async (url = '', data = {}) => {
         body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
     try {
+        console.log("::: DONE: postData.js > handlePost()  :::")
         return await postRes.json()
     } catch (error) {
         console.log("error", error);

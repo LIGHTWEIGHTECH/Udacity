@@ -3,6 +3,8 @@ projectData = {};
 
 // Require Express to run server and routes
 const express = require('express');
+const https = require('https')
+const http = require('http')
 
 /* Dependencies */
 const bodyParser = require('body-parser')
@@ -26,6 +28,11 @@ app.use(express.static('../dist'));
 
 
 // Setup Server
-const server = app.listen(port = "8080", () => {
+const server = app.listen(port = 8080, () => {
     console.log(`running on localhost: ${port}`)
 })
+
+// POST method route
+app.post('/all', function (req, res) {
+    res.send({"Message":"POST request to the homepage"})
+  })

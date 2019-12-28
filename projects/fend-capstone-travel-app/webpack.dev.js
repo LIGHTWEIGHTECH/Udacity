@@ -17,13 +17,23 @@ module.exports = {
     stats: 'verbose',
     module: {
         rules: [{
-            test: '/\.js$/',
-            exclude: /node_modules/,
-            loader: "babel-loader"
-        }, {
-            test: /\.scss$/,
-            use: ['style-loader', 'css-loader', 'sass-loader']
-        }]
+                test: '/\.js$/',
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            }, {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        attrs: [':data-src']
+                    }
+                }
+            }
+        ]
     },
     plugins: [
         new HtmlWebPackPlugin({
