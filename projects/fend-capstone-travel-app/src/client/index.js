@@ -6,9 +6,14 @@ import {
     postInput
 } from "./js/submitInput"
 
+import {
+    getAPI
+} from "./js/callAPI"
+
 import './styles/style.scss'
 
 export {
     handlePost,
-    postInput
+    postInput,
+    getAPI
 }

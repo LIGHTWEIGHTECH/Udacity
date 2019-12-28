@@ -23,7 +23,7 @@ const handlePost = async (url = '', data = {}) => {
     });
     try {
         console.log("::: DONE: postData.js > handlePost()  :::")
-        return await postRes.json()
+        return await postRes.text();
     } catch (error) {
         console.log("error", error);
     }

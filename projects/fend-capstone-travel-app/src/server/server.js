@@ -1,13 +1,15 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let apiData = {};
 
 // Require Express to run server and routes
 const express = require('express');
-const https = require('https')
-const http = require('http')
+const https = require('https');
+const http = require('http');
 
 /* Dependencies */
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv').config();
+var apiAuth = process.env.API_USERNAME
 
 // Start up an instance of app
 const app = express();
@@ -28,11 +30,22 @@ app.use(express.static('../dist'));
 
 
 // Setup Server
-const server = app.listen(port = 8080, () => {
+const port = 8080;
+
+const server = app.listen(port, () => {
     console.log(`running on localhost: ${port}`)
 })
 
 // POST method route
-app.post('/all', function (req, res) {
+app.post('/', function (req, res) {
     res.send({"Message":"POST request to the homepage"})
   })
+
+app.post('/apidata', function (req, res) {
+    apiData = req.body;
+    res.send({"message":"SERVER(localhost:8080), DATA STORED", "data":apiData});
+})
+
+app.post('/getusername', function (req, res) {
+    res.send();
+})
