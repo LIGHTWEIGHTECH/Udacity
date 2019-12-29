@@ -38,10 +38,15 @@ const server = app.listen(port, () => {
 
 // POST method route
 app.post('/', function (req, res) {
-    res.send({"message":"POST request to the homepage"})
-  })
+    res.send({
+        "message": "POST request to the homepage"
+    })
+})
 
 app.post('/apidata', function (req, res) {
     let apiData = req.body.postalCodes[0];
-    res.send({"message":"SERVER(localhost:8080), DATA STORED", "data":apiData});
+    res.send({
+        "message": "SERVER(localhost:8080), DATA STORED",
+        "data": apiData
+    });
 })
