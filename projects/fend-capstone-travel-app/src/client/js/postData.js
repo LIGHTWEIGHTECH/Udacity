@@ -21,7 +21,7 @@ const handlePOST = async (url = '', data = {}) => {
     try {
         return await postRes.json();
     } catch (error) {
-        console.log("CLIENT(js/postData.js), ERROR", error);
+        console.log("CLIENT(js/postData.js), POST REQUEST FAILED", error);
     }
 }
 
