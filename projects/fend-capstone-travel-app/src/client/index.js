@@ -7,18 +7,18 @@ import {
 } from "./js/submitInput"
 
 import {
-    getAPI
-} from "./js/callAPI"
+    fetchGeonames
+} from "./js/getGeonames"
 
 import {
-    getSky
-} from "./js/fetchDarkSky"
+    fetchDarkSky
+} from "./js/getDarkSky"
 
 import './styles/style.scss'
 
 export {
     handlePost,
     postInput,
-    getAPI,
-    getSky
+    fetchGeonames,
+    fetchDarkSky
 }

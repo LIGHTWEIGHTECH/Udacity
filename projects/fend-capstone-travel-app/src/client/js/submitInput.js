@@ -3,14 +3,14 @@ import {
 } from "./postData";
 
 import {
-    getAPI
-} from "./callAPI";
+    fetchGeonames
+} from "./getGeonames";
 import {
-    getSky
-} from "./fetchDarkSky";
+    fetchDarkSky
+} from "./getDarkSky";
 
 const postInput = document.getElementById('generate').addEventListener('click', async (url, data = {}) => {
-    let getRes = await getAPI('http://api.geonames.org/postalCodeSearchJSON?', document.getElementById('input').value, 'basbrakel')
+    let getRes = await fetchGeonames('http://api.geonames.org/postalCodeSearchJSON?', document.getElementById('input').value, 'basbrakel')
     console.log(getRes.postalCodes[0]);
     let postRes = await handlePost('http://localhost:8080/apidata', getRes);
     console.log(postRes.message, postRes.data)
@@ -18,7 +18,7 @@ const postInput = document.getElementById('generate').addEventListener('click', 
     document.getElementById('country').innerText = `${postRes.data.placeName}, ${postRes.data.countryCode}`
     document.getElementById('latitude').innerText = `${postRes.data.lat}`
     document.getElementById('longitude').innerText = `${postRes.data.lng}`
-    let dsRes = getSky(await postRes.data)
+    let dsRes = fetchDarkSky(await postRes.data)
     console.log(dsRes)
 })
 
