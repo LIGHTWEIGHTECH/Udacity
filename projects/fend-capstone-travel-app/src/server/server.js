@@ -9,7 +9,7 @@ const http = require('http');
 /* Dependencies */
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config();
-var apiAuth = process.env.API_USERNAME
+var apiAuth = process.env.API_KEY
 
 // Start up an instance of app
 const app = express();
@@ -42,6 +42,10 @@ app.post('/', function (req, res) {
   })
 
 app.post('/apidata', function (req, res) {
-    apiData = req.body;
+    let apiData = req.body.postalCodes[0];
     res.send({"message":"SERVER(localhost:8080), DATA STORED", "data":apiData});
+})
+
+app.get('/darksky', function (req, res) {
+    res.send()
 })
