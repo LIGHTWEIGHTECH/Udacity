@@ -4,19 +4,18 @@ body {
 
     #app {
         display: grid;
-        grid-auto-rows: minmax(150px, auto);
+        grid-auto-rows: minmax(auto, auto);
         /* grid-template-columns:  */
         height: 100vh;
         background: #f23557;
         color: #f0d43a;
         justify-content: center;
-        grid-gap: 1em;
+        grid-gap: 0.2em;
         font-size: 20px;
         font-family: 'Oswald', sans-serif;
     }
 
     .holder {
-
         /*  Basic Styling To Override Default For Basic HTML Elements */
         label {
             display: block;
@@ -25,13 +24,15 @@ body {
 
         input {
             display: block;
-            height: 60px;
-            width: 320px;
+            height: 30px;
+            width: auto;
             background: #22b2da;
             color: #f0d43a;
             font-size: 20px;
             font-family: 'Oswald', sans-serif;
             border: none;
+            padding: 10px;
+            margin: 10px;
         }
 
         button {
@@ -55,6 +56,28 @@ body {
             font-size: 20px;
             font-family: 'Oswald', sans-serif;
         }
+        .date {
+            display: flex;
+            .date {
+                height: 20px;
+                width: 20px;
+                background: #22b2da;
+                color: #f0d43a;
+                font-size: 20px;
+                font-family: 'Oswald', sans-serif;
+                border: none;
+                margin: 10px;
+                padding: 10px;
+                align-self: flex-start;
+            }
+            span {
+                margin-top: 12px;
+            }
+        }
+
+        #year {
+            width: 40px;
+        }
 
         #entryHolder {
             #date {}
@@ -64,14 +87,6 @@ body {
             #content {}
         }
 
-        .headline {}
-
-        .entry {
-            background: rgba(59, 74, 107, .4);
-        }
-
-        .title {}
-
         /* Reset style for HTML element on active to have no border*/
         input:focus,
         select:focus,
@@ -79,6 +94,8 @@ body {
         button:focus {
             outline: none;
         }
+
+
 
         /* Style for Placeholder Text*/
         ::placeholder {
@@ -102,4 +119,13 @@ body {
 
         }
     }
+    .headline {
+    }
+
+    .entry {
+        background: rgba(59, 74, 107, .4);
+    }
+
+    .title {}
+
 }

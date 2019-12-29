@@ -10,17 +10,22 @@
 <body>
   <div id="app">
     <div class="holder headline">
-      Weather Journal App
+      FEND Capstone - Travel App
     </div>
     <div class="holder zip">
-      <label for="zip">Destination :</label>
-      <input type="text" id="input" placeholder="  . . .">
+      <label for="destination">Destination :</label>
+      <input type="text" id="input">
+      <div class="date">
+        <input class="date" type="text" id="day"><span>-</span>
+        <input class="date" type="text" id="month"><span>-</span>
+        <input class="date" type="text" id="year">
+      </div>
     </div>
     <div class="holder feel">
       <button id="generate" type="submit"> Generate </button>
     </div>
     <div class="holder entry">
-      <div class="title">Most Recent Entry</div>
+      <div class="title">Results</div>
       <div id="entryHolder">
         <div id="country"></div>
         <div id="latitude"></div>
