@@ -7,9 +7,7 @@ import {
 } from "./callAPI";
 
 const postInput = document.getElementById('generate').addEventListener('click', async (url, data = {}) => {
-    let getUN = await handlePost('http://localhost:8080/getusername')
-    console.log(getUN)
-    let getRes = await getAPI('http://api.geonames.org/postalCodeSearchJSON?', document.getElementById('input').value, await getUN)
+    let getRes = await getAPI('http://api.geonames.org/postalCodeSearchJSON?', document.getElementById('input').value, 'basbrakel')
     console.log(getRes);
     let postRes = await handlePost(url = `http://localhost:8080/apidata`, getRes);
     console.log(postRes.message, postRes.data)

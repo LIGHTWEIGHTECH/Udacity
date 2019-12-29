@@ -1,8 +1,8 @@
 const getAPI = async (url, zip, key) => {
-    console.log("::: INITIATED: callAPI.js > getAPI() :::")
+    console.log(":: INITIATED: callAPI.js > getAPI() ::")
     const res = await fetch(`${url}postalcode=${zip}&country=NL&username=${key}`);
     try {
-        console.log("::: DONE: callAPI.js > getAPI() :::")
+        console.log(":: DONE: callAPI.js > getAPI() ::")
         return await res.json();
     } catch (err) {
         alert("Error(getAPI): Unable to retrieve API", err);
