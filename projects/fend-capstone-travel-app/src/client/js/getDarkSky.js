@@ -14,7 +14,7 @@ const fetchDarkSky = async (data) => {
         const dsData = `${url}${key}/${data.lat},${data.lng},${time}`
         let response = await fetch(`http://localhost:8082/${dsData}`)
         try {
-            return response.json()
+            return response.json();
         } catch (error) {
             console.log("CLIENT(js/getDarkSky.js), BAD FETCH", error);
         }

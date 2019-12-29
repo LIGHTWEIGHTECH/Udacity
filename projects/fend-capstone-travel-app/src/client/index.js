@@ -14,11 +14,16 @@ import {
     fetchDarkSky
 } from "./js/getDarkSky"
 
+import {
+    fetchPixabay
+} from "./js/getPixabay"
+
 import './styles/style.scss'
 
 export {
     handlePOST,
     handleSubmit,
     fetchGeonames,
-    fetchDarkSky
+    fetchDarkSky,
+    fetchPixabay
 }
