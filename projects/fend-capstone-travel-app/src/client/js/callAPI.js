@@ -1,6 +1,6 @@
 const getAPI = async (url, zip, key) => {
     console.log(":: INITIATED: callAPI.js > getAPI() ::")
-    const res = await fetch(`${url}postalcode=${zip}&country=NL&username=${key}`);
+    const res = await fetch(`${url}postalcode=${zip}&username=${key}`);
     try {
         console.log(":: DONE: callAPI.js > getAPI() ::")
         return await res.json();
