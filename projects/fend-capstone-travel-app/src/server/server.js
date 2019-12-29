@@ -45,7 +45,3 @@ app.post('/apidata', function (req, res) {
     let apiData = req.body.postalCodes[0];
     res.send({"message":"SERVER(localhost:8080), DATA STORED", "data":apiData});
 })
-
-app.get('/darksky', function (req, res) {
-    res.send()
-})

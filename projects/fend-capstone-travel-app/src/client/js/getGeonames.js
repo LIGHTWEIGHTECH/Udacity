@@ -1,12 +1,9 @@
-const fetchGeonames = async (url, zip, key) => {
-    console.log(":: INITIATED: callAPI.js > fetchGeonames() ::")
+const fetchGeonames = async (zip, url = 'http://api.geonames.org/postalCodeSearchJSON?', key = 'basbrakel') => {
     const res = await fetch(`${url}postalcode=${zip}&username=${key}`);
     try {
-        console.log(":: DONE: callAPI.js > fetchGeonames() ::")
         return await res.json();
-    } catch (err) {
-        alert("Error(fetchGeonames): Unable to retrieve API", err);
-        console.log(res.json())
+    } catch (error) {
+        console.log("CLIENT(js/postData.js), ERROR", error);
     }
 }
 

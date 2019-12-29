@@ -1,10 +1,10 @@
 import {
-    handlePost
+    handlePOST
 } from "./js/postData";
 
 import {
-    postInput
-} from "./js/submitInput"
+    handleSubmit
+} from "./js/submitForm"
 
 import {
     fetchGeonames
@@ -17,8 +17,8 @@ import {
 import './styles/style.scss'
 
 export {
-    handlePost,
-    postInput,
+    handlePOST,
+    handleSubmit,
     fetchGeonames,
     fetchDarkSky
 }
