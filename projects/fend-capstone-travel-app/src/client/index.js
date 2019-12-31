@@ -3,7 +3,8 @@ import {
 } from "./js/postData";
 
 import {
-    handleSubmit
+    handleSubmit,
+    listen
 } from "./js/submitForm"
 
 import {
@@ -18,12 +19,17 @@ import {
     fetchPixabay
 } from "./js/getPixabay"
 
-import './styles/style.scss'
+import './styles/aside.scss'
+import './styles/body.scss'
+import './styles/footer.scss'
+import './styles/header.scss'
+import './styles/main.scss'
 
 export {
     handlePOST,
     handleSubmit,
     fetchGeonames,
     fetchDarkSky,
-    fetchPixabay
+    fetchPixabay,
+    listen
 }

@@ -1,0 +1,16 @@
+$font-main: 'Inria Serif', serif;
+$font-sub: 'Roboto', sans-serif;
+
+%card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+aside {
+        font: 100% $font-main;
+        margin: 1px;
+        @extend %card;
+}
