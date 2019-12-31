@@ -27,23 +27,27 @@ const listen = (() => {
 const handleSubmit = async () => {
     let input = document.getElementById('input')
         .value
+        let from = document.getElementById('from')
+        .value
     try {
         let postRes = (await handlePOST('http://localhost:8080/apidata', await fetchGeonames(input)))
             .data;
+        let postResFrom = (await handlePOST('http://localhost:8080/apidata', await fetchGeonames(from)))
+            .data;
+            console.log(postRes)
         try {
-            const createEle = async(ele, data) => {
+            const createEle = async(ele, data, mess ="", secMess = "") => {
                 const x = document.createElement(`${ele}`);
                 switch (ele) {
                     case 'img':
                         const pix = await fetchPixabay(data);
                         x.src = (pix.hits[0]).largeImageURL;
                         return x;
-
                     case 'p':
                         x.innerText = data;
                         return x;
                     case 'label':
-                        x.innerText = data;
+                        x.innerText = `${mess}${data}${secMess}`;
                         return x;
                 
                     default:
@@ -51,28 +55,17 @@ const handleSubmit = async () => {
                         break;
                 }
             };
-            // document.getElementById('country')
-            //     .innerText = `${postRes.placeName}, ${postRes.countryCode}`
-            // document.getElementById('latitude')
-            //     .innerText = `${postRes.lat}`
-            // document.getElementById('longitude')
-            //     .innerText = `${postRes.lng}`
-            // // fetchDarkSky(await postRes)
-            // document.getElementById('photo')
-            //     .src = ((await fetchPixabay(postRes.placeName))
-            //         .hits[0])
-            //     .largeImageURL
-            // const x = document.createElement("img");
-            // const pix = await fetchPixabay(postRes.placeName);
-            // x.src = (pix.hits[0]).largeImageURL;
-            // document.getElementsByTagName('main')[0].appendChild(x);
             let newMain = document.createElement("main");
-            const newCit = await createEle('label', postRes.placeName)
-            const newCod = await createEle('p', postRes.countryCode)
-            const newLat = await createEle('p', postRes.lat)
-            const newLng = await createEle('p', postRes.lng)
+            const newSta = await createEle('label', postResFrom.placeName, "From: ", `, ${postResFrom.countryCode}`)
+            const newCit = await createEle('label', postRes.placeName, "To: ", `, ${postRes.countryCode}`)
+            const date = (new Date(document.getElementById('year').value, document.getElementById('month').value - 1, document.getElementById('day').value)).toLocaleDateString()
+            const newDat = await createEle('label', date, "On: ")
+            // const newLat = await createEle('p', postRes.lat)
+            // const newLng = await createEle('p', postRes.lng)
+            // const froLat = await createEle('p', postResFrom.lat)
+            // const froLng = await createEle('p', postResFrom.lng)
             const newImg = await createEle('img', postRes.placeName)
-            newMain.append(newCit, newCod, newLat, newLng, newImg)
+            newMain.append(newSta, newCit, newDat, /*newLat, newLng, froLat, froLng,*/ newImg)
             console.log(newMain);
             document.getElementById('app').replaceChild(newMain, document.getElementsByTagName('main')[0])
 

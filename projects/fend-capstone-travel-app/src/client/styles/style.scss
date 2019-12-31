@@ -1,134 +1,134 @@
-body {
-    background: #fffff8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+// body {
+//     background: #fffff8;
+//     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
-    #app {
-        display: grid;
-        grid-auto-rows: minmax(auto, auto);
-        /* grid-template-columns:  */
-        min-height: 100vh;
-        height: 100%;
-        padding: 20px;
-        background: #f23557;
-        color: #f0d43a;
-        justify-content: center;
-        grid-gap: 0.2em;
-        font-size: 20px;
-        font-family: 'Oswald', sans-serif;
-    }
+//     #app {
+//         display: grid;
+//         grid-auto-rows: minmax(auto, auto);
+//         /* grid-template-columns:  */
+//         min-height: 100vh;
+//         height: 100%;
+//         padding: 20px;
+//         background: #f23557;
+//         color: #f0d43a;
+//         justify-content: center;
+//         grid-gap: 0.2em;
+//         font-size: 20px;
+//         font-family: 'Oswald', sans-serif;
+//     }
 
-    .holder {
+//     .holder {
 
-        /*  Basic Styling To Override Default For Basic HTML Elements */
-        label {
-            display: block;
-            font-size: 27px;
-        }
+//         /*  Basic Styling To Override Default For Basic HTML Elements */
+//         label {
+//             display: block;
+//             font-size: 27px;
+//         }
 
-        input {
-            display: block;
-            height: 30px;
-            width: auto;
-            background: #22b2da;
-            color: #f0d43a;
-            font-size: 20px;
-            font-family: 'Oswald', sans-serif;
-            border: none;
-            padding: 10px;
-            margin: 10px;
-        }
+//         input {
+//             display: block;
+//             height: 30px;
+//             width: auto;
+//             background: #22b2da;
+//             color: #f0d43a;
+//             font-size: 20px;
+//             font-family: 'Oswald', sans-serif;
+//             border: none;
+//             padding: 10px;
+//             margin: 10px;
+//         }
 
-        button {
-            width: 400px;
-            height: 100px;
-            background: #3b4a6b;
-            color: #f0d43a;
-            font-size: 26px;
-            font-family: 'Oswald', sans-serif;
-            border: none;
-            box-shadow: 2px 4px 5px #444;
-        }
+//         button {
+//             width: 400px;
+//             height: 100px;
+//             background: #3b4a6b;
+//             color: #f0d43a;
+//             font-size: 26px;
+//             font-family: 'Oswald', sans-serif;
+//             border: none;
+//             box-shadow: 2px 4px 5px #444;
+//         }
 
-        h1 {
-            font-size: 36px;
-        }
+//         h1 {
+//             font-size: 36px;
+//         }
 
-        textarea {
-            background: #22b2da;
-            color: #f0d43a;
-            font-size: 20px;
-            font-family: 'Oswald', sans-serif;
-        }
+//         textarea {
+//             background: #22b2da;
+//             color: #f0d43a;
+//             font-size: 20px;
+//             font-family: 'Oswald', sans-serif;
+//         }
 
-        .date {
-            display: flex;
+//         .date {
+//             display: flex;
 
-            .date {
-                height: 20px;
-                width: 20px;
-                background: #22b2da;
-                color: #f0d43a;
-                font-size: 20px;
-                font-family: 'Oswald', sans-serif;
-                border: none;
-                margin: 10px;
-                padding: 10px;
-                align-self: flex-start;
-            }
+//             .date {
+//                 height: 20px;
+//                 width: 20px;
+//                 background: #22b2da;
+//                 color: #f0d43a;
+//                 font-size: 20px;
+//                 font-family: 'Oswald', sans-serif;
+//                 border: none;
+//                 margin: 10px;
+//                 padding: 10px;
+//                 align-self: flex-start;
+//             }
 
-            span {
-                margin-top: 12px;
-            }
-        }
+//             span {
+//                 margin-top: 12px;
+//             }
+//         }
 
-        #photo {
-            width: 395px;
-            max-height: 200px;
-        }
+//         #photo {
+//             width: 395px;
+//             max-height: 200px;
+//         }
 
-        #year {
-            width: 40px;
-        }
+//         #year {
+//             width: 40px;
+//         }
 
-        /* Reset style for HTML element on active to have no border*/
-        input:focus,
-        select:focus,
-        textarea:focus,
-        button:focus {
-            outline: none;
-        }
+//         /* Reset style for HTML element on active to have no border*/
+//         input:focus,
+//         select:focus,
+//         textarea:focus,
+//         button:focus {
+//             outline: none;
+//         }
 
 
 
-        /* Style for Placeholder Text*/
-        ::placeholder {
-            /* Firefox, Chrome, Opera */
-            color: #f0d43a;
-            font-family: 'Oswald', sans-serif;
+//         /* Style for Placeholder Text*/
+//         ::placeholder {
+//             /* Firefox, Chrome, Opera */
+//             color: #f0d43a;
+//             font-family: 'Oswald', sans-serif;
 
-        }
+//         }
 
-        :-ms-input-placeholder {
-            /* Internet Explorer 10-11 */
-            color: #f0d43a;
-            font-family: 'Oswald', sans-serif;
+//         :-ms-input-placeholder {
+//             /* Internet Explorer 10-11 */
+//             color: #f0d43a;
+//             font-family: 'Oswald', sans-serif;
 
-        }
+//         }
 
-        ::-ms-input-placeholder {
-            /* Microsoft Edge */
-            color: #f0d43a;
-            font-family: 'Oswald', sans-serif;
+//         ::-ms-input-placeholder {
+//             /* Microsoft Edge */
+//             color: #f0d43a;
+//             font-family: 'Oswald', sans-serif;
 
-        }
-    }
+//         }
+//     }
 
-    .headline {}
+//     .headline {}
 
-    .entry {
-        background: rgba(59, 74, 107, .4);
-    }
+//     .entry {
+//         background: rgba(59, 74, 107, .4);
+//     }
 
-    .title {}
+//     .title {}
 
-}
+// }
