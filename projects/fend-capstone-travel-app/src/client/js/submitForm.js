@@ -14,29 +14,34 @@ import {
     fetchPixabay
 }
 from "./getPixabay";
-const listen = (() => {
-    document.getElementById('generate')
-        .addEventListener('click', () => {
-            try {
-                handleSubmit();
-            } catch (e) {
-                console.log("CLIENT(js/submitForm.js), EVENT ERROR", error);
-            }
-        })
-})();
+const listen = (ele = document.getElementById('generate')) => {
+    try {
+    ele.addEventListener('click', () => {
+        try {
+            handleSubmit();
+        } catch (err) {
+            console.log("CLIENT(js/submitForm.js), EVENT ERROR", err);
+        }
+    })} catch (err) {
+        console.log("CLIENT(js/submitForm.js), EVENT ERROR", err);
+    }
+};
+
+window.onload = listen();
+
 const handleSubmit = async () => {
     let input = document.getElementById('input')
         .value
-        let from = document.getElementById('from')
+    let from = document.getElementById('from')
         .value
     try {
         let postRes = (await handlePOST('http://localhost:8080/apidata', await fetchGeonames(input)))
             .data;
         let postResFrom = (await handlePOST('http://localhost:8080/apidata', await fetchGeonames(from)))
             .data;
-            console.log(postRes)
+        console.log(postRes)
         try {
-            const createEle = async(ele, data, mess ="", secMess = "") => {
+            const createEle = async (ele, data, mess = "", secMess = "") => {
                 const x = document.createElement(`${ele}`);
                 switch (ele) {
                     case 'img':
@@ -49,7 +54,7 @@ const handleSubmit = async () => {
                     case 'label':
                         x.innerText = `${mess}${data}${secMess}`;
                         return x;
-                
+
                     default:
                         console.log("createEle(), FAILED")
                         break;
@@ -76,7 +81,7 @@ const handleSubmit = async () => {
         alert("INVALID INPUT")
         console.log("CLIENT(js/submitForm.js), BAD INPUT", error);
     }
-}
+} 
 
 export {
     handleSubmit,
