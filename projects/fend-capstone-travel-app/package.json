@@ -1,7 +1,10 @@
 {
   "name": "fend-capstone-travel-app",
   "version": "1.0.0",
-  "repository": "{https://github.com/bbrakel/Udacity/tree/master/projects/fend-capstone-travel-app}",
+  "repository": {
+    "type": "git",
+    "url": "{https://github.com/bbrakel/Udacity/tree/master/projects/fend-capstone-travel-app}"
+  },
   "description": "This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI.",
   "main": "index.js",
   "scripts": {
